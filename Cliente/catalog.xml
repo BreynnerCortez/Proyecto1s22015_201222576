@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://192.168.1.130:8080/PruebaWeb/VolumenEsfera?wsdl" uri="src/conf/xml-resources/web-service-references/VolumenEsfera/wsdl/192.168.1.130_8080/PruebaWeb/VolumenEsfera.wsdl"/>
+    <system systemId="http://192.168.1.130:8080/PruebaWeb/VolumenEsfera?xsd=1" uri="src/conf/xml-resources/web-service-references/VolumenEsfera/wsdl/192.168.1.130_8080/PruebaWeb/VolumenEsfera.xsd_1.xsd"/>
+</catalog>
