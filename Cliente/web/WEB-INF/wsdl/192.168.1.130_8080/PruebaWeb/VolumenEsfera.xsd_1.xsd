@@ -6,7 +6,8 @@
 
 <xs:complexType name="Volumen">
 <xs:sequence>
-<xs:element name="radio" type="xs:double" />
+<xs:element name="uno" type="xs:double" />
+<xs:element name="dos" type="xs:double" />
 </xs:sequence>
 </xs:complexType>
 
