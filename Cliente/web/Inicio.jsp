@@ -4,8 +4,8 @@
     Author     : Breynner
 --%>
 
-<%@page import="jdk.nashorn.internal.runtime.Debug.id(Object)"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@page  contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,27 +19,32 @@
         </style>
     </head>
     <body>
-        <div style="text-align: center;">
+        <div style="text-align: center;" >
         <h1> Bienvenido a la MUNICIPALIDAD DE GUATEMALA. </h1> </div>
        <form action="Inicio.jsp" method="POST">
            <div style="text-align: right;">
-               <input type="text" name="usuario" height="50" style="visibility:hidden" value="" />
-            <input type="Password" name="contrase" height="50" style="visibility:hidden" value="" />
-            <input type="submit" value="Ingresar" name="Ingreso" style="visibility:hidden" />
-            <input type="submit" value="Iniciar Sesion" name="Inicio" />
+               <input type="text" name="usuario"  value="" />
+            <input type="Password" name="contrase"   value="" />
+            <input type="submit" value="Ingresar" name="Ingreso"  />
+            <input type="submit" value="Iniciar Sesion" name="Inicio"/>
             </div>
+           
        </form>
-        "Ingresar".style.visibility='visible'; 
         
+        <%!
+     public void DirigirAdmin(){
+       
+     }
+        
+        %>
                <%-- start web service invocation --%><hr/>
     <%
-       
+ 
         String usuario;
         String contrase;
         
     try {
-	//document.getElementsByName("p2").style.visibility="hidden";
-        esfera.VolumenEsfera_Service service = new esfera.VolumenEsfera_Service();
+	esfera.VolumenEsfera_Service service = new esfera.VolumenEsfera_Service();
 	esfera.VolumenEsfera port = service.getVolumenEsferaPort();
 	 // TODO initialize WS operation arguments here
 	//double radio = Double.valueOf(request.getParameter("cajaUno"));
@@ -61,6 +66,9 @@
     } catch (Exception ex) {
 	
     }
+    
+    
+    
     %>
     <%-- end web service invocation --%><hr/>
 
