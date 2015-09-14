@@ -21,8 +21,16 @@
         String TempUsu= request.getParameter("usuario");
         String TempCont= request.getParameter("contrase");
         %>
-        
-        <h1><%="Bienvenido "+TempUsu+"\n Su contraseña es: "+TempCont %></h1>
-        
+        <div style="text-align: center;" >
+        <h1>Bienvenido Administrador!</h1></div>
+         <form action="AdministradorJSP.jsp" method="POST">
+             <div style="text-align: right;">
+                    <%="Usuario"%>
+            <input type="text" name="usuario"  value="" />
+                    <%="Contraseña"%>
+            <input type="Password" name="contrase"   value="" />
+            <input type="submit" value="Ingresar" name="Ingreso"  />
+             </div>
+        </form>
     </body>
 </html>
