@@ -3,7 +3,7 @@
     Created on : 13/09/2015, 12:12:14 PM
     Author     : Breynner
 --%>
-
+<%@page import="javax.swing.text.Document"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,31 +21,43 @@
         <div style="text-align: center;" >
         <h1>Bienvenido Estacion!</h1></div>
         <form action="EstacionJSP.jsp" method="POST">
+            <<%--    FUNCION CLICK      <% 
+                
+            if(request.getParameter("Ingreso")!= null) {
+              %>
+            You clicked 
+            <%= request.getParameter("Ingreso") %>
+        <%
+            }
+        %> --%>
+            
             <div style="text-align: right;">
                    <%="Usuario"%>
               <input type="text" name="usuario"  value="" />
                    <%="Contraseña"%>
             <input type="Password" name="contrase"   value="" />
-            <input type="submit" value="Ingresar" name="Ingreso"  />
+            <input type="submit" value="Ingresar" name="Ingreso" />
+            <input type="submit" value="Prueba" name="Prueba" />
             </div>
         </form>
             <HR>
             <div style="text-align: right;">
             <img src="estaciones.jpg" width="630" height="1430" alt="estaciones"/></div>
-
-    <%-- start web service invocation --%><hr/>
-    <%
-    try {
-	esfera.Prueba_Service service = new esfera.Prueba_Service();
-	esfera.Prueba port = service.getPruebaPort();
-	// TODO process result here
-	java.lang.String result = port.imp();
-	out.println("Result = "+result);
-    } catch (Exception ex) {
-	// TODO handle custom exceptions here
-    }
-    %>
-    <%-- end web service invocation --%><hr/>
-
     </body>
 </html>
+    <%-- start web service invocation --%><hr/>
+    <%
+           
+            if(request.getParameter("Ingreso")!= null) {
+                out.println(request.getParameter("Ingreso")+"!") ;
+            }
+            if(request.getParameter("Prueba")!= null) {
+                out.println(request.getParameter("Prueba")+"!") ;
+            }
+           
+       
+       
+       
+  
+    %>
+    <%-- end web service invocation --%><hr/>
