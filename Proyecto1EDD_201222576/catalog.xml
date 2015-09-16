@@ -4,4 +4,6 @@
     <system systemId="http://192.168.1.130:8080/PruebaWeb/VolumenEsfera?xsd=1" uri="src/conf/xml-resources/web-service-references/VolumenEsfera/wsdl/192.168.1.130_8080/PruebaWeb/VolumenEsfera.xsd_1.xsd"/>
     <system systemId="http://192.168.1.130:8080/PruebaWeb/Prueba?wsdl" uri="src/conf/xml-resources/web-service-references/Prueba/wsdl/192.168.1.130_8080/PruebaWeb/Prueba.wsdl"/>
     <system systemId="http://192.168.1.130:8080/PruebaWeb/Prueba?xsd=1" uri="src/conf/xml-resources/web-service-references/Prueba/wsdl/192.168.1.130_8080/PruebaWeb/Prueba.xsd_1.xsd"/>
+    <system systemId="http://192.168.1.130:8080/PruebaWeb/WSAdmin?wsdl" uri="src/conf/xml-resources/web-service-references/WSAdmin/wsdl/192.168.1.130_8080/PruebaWeb/WSAdmin.wsdl"/>
+    <system systemId="http://192.168.1.130:8080/PruebaWeb/WSAdmin?xsd=1" uri="src/conf/xml-resources/web-service-references/WSAdmin/wsdl/192.168.1.130_8080/PruebaWeb/WSAdmin.xsd_1.xsd"/>
 </catalog>

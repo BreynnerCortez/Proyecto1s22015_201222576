@@ -1,23 +1,38 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://Esfera/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Esfera/">
 
-<xs:element name="Suma" type="tns:Suma" />
+<xs:element name="Buscar" type="tns:Buscar" />
 
-<xs:element name="SumaResponse" type="tns:SumaResponse" />
+<xs:element name="BuscarResponse" type="tns:BuscarResponse" />
+
+<xs:element name="Ingresar" type="tns:Ingresar" />
+
+<xs:element name="IngresarResponse" type="tns:IngresarResponse" />
 
 <xs:element name="imp" type="tns:imp" />
 
 <xs:element name="impResponse" type="tns:impResponse" />
 
-<xs:complexType name="Suma">
+<xs:complexType name="Buscar">
 <xs:sequence>
-<xs:element name="arg0" type="xs:int" />
-<xs:element name="arg1" type="xs:int" />
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="SumaResponse">
+<xs:complexType name="BuscarResponse">
 <xs:sequence>
-<xs:element name="return" type="xs:int" />
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Ingresar">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IngresarResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
 </xs:sequence>
 </xs:complexType>
 

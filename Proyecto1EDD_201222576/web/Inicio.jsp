@@ -23,17 +23,17 @@
     <body>
         <div style="text-align: center;" >
         <h1> Bienvenido a la MUNICIPALIDAD DE GUATEMALA. </h1> </div>
-       <form action="AdminsJSP.jsp" method="POST">
+       <form action="LoginAdminsJSP.jsp" method="POST">
            <div style="text-align: right;">
                <input type="submit" value="Iniciar sesion ADMINISTRADOR" name="InicioAd"/></div>
        </form>
         <br>  
-        <form action="EstacionJSP.jsp" method="POST">
+        <form action="LoginEstacionJSP.jsp" method="POST">
            <div style="text-align: right;">
                <input type="submit" value="Iniciar sesion ESTACION" name="InicioEs"/></div>
        </form>
         <br> 
-        <form action="ChoferJSP.jsp" method="POST">
+        <form action="LoginChoferJSP.jsp" method="POST">
            <div style="text-align: right;">
                <input type="submit" value="Iniciar sesion CHOFER" name="InicioCh"/></div>
        </form>

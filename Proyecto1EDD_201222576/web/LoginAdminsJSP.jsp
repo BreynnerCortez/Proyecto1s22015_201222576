@@ -17,16 +17,12 @@
         </style>
     </head>
     <body>
-        <%
-        String TempUsu= request.getParameter("usuario");
-        String TempCont= request.getParameter("contrase");
-        %>
         <div style="text-align: center;" >
         <h1>Bienvenido Administrador!</h1></div>
-         <form action="AdministradorJSP.jsp" method="POST">
+         <form action="ServletAdmin" method="POST">
              <div style="text-align: right;">
                     <%="Usuario"%>
-            <input type="text" name="usuario"  value="" />
+            <input type="text" name="correo"  value="" />
                     <%="Contraseña"%>
             <input type="Password" name="contrase"   value="" />
             <input type="submit" value="Ingresar" name="Ingreso"  />

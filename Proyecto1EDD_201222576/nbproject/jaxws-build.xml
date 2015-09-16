@@ -42,21 +42,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/esfera"/>
         <delete dir="${build.generated.dir}/jax-wsCache/VolumenEsfera"/>
     </target>
-    <target name="wsimport-client-Prueba" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/Prueba"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Prueba" destdir="${build.generated.dir}/jax-wsCache/Prueba" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/Prueba/wsdl/192.168.1.130_8080/PruebaWeb/Prueba.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://192.168.1.130:8080/PruebaWeb/Prueba?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/Prueba/wsdl/192.168.1.130_8080/PruebaWeb/Prueba.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/Prueba"/>
+    <target name="wsimport-client-WSAdmin" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSAdmin"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSAdmin" destdir="${build.generated.dir}/jax-wsCache/WSAdmin" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSAdmin/wsdl/192.168.1.130_8080/PruebaWeb/WSAdmin.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://192.168.1.130:8080/PruebaWeb/WSAdmin?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSAdmin/wsdl/192.168.1.130_8080/PruebaWeb/WSAdmin.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSAdmin"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/Prueba">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSAdmin">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-Prueba" depends="-init-project">
+    <target name="wsimport-client-clean-WSAdmin" depends="-init-project">
         <delete dir="${build.generated.sources.dir}/jax-ws/esfera"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/Prueba"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSAdmin"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-VolumenEsfera, wsimport-client-Prueba"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-VolumenEsfera, wsimport-client-WSAdmin"/>
 </project>

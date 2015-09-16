@@ -34,9 +34,9 @@
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="Prueba">
-      <wsdl-url>http://192.168.1.130:8080/PruebaWeb/Prueba?wsdl</wsdl-url>
-      <local-wsdl-file>192.168.1.130_8080/PruebaWeb/Prueba.wsdl</local-wsdl-file>
+    <client name="WSAdmin">
+      <wsdl-url>http://192.168.1.130:8080/PruebaWeb/WSAdmin?wsdl</wsdl-url>
+      <local-wsdl-file>192.168.1.130_8080/PruebaWeb/WSAdmin.wsdl</local-wsdl-file>
       <package-name>esfera</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -54,7 +54,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://192.168.1.130:8080/PruebaWeb/Prueba?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://192.168.1.130:8080/PruebaWeb/WSAdmin?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
