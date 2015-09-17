@@ -27,8 +27,4 @@ public class BeanAdmin {
  public void setContrase(String contrase){
      this.contrase=contrase;
  }
- public String getMensaje(){
-     return contrase;
- }
-
 }

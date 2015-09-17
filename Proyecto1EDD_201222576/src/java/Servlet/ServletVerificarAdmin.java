@@ -42,21 +42,15 @@ public class ServletVerificarAdmin extends HttpServlet {
         BeanAdmin datos=new BeanAdmin();
         datos.setCorreo(request.getParameter("correo"));
         datos.setContrase(request.getParameter("contrase"));
+        request.setAttribute("datos", datos);
         
-        
-        String datosadm=request.getParameter("correo")+","+request.getParameter("contrase");
-          request.setAttribute("datos", datos);
-        
-        
+         String datosadm=request.getParameter("correo")+","+request.getParameter("contrase");
         if(request.getParameter("correo").compareTo("admin")==0 && request.getParameter("contrase").compareTo("admin")==0){
             request.getRequestDispatcher("AdministradorJSP.jsp").forward(request, response);
-            contador++;
-            
-        }else if(contador>0 && buscar(datosadm)==true){
-            request.getRequestDispatcher("AdminstradorJSP.jsp").forward(request, response);
+        }else if(buscar(datosadm)!="" && buscar(datosadm).compareTo(request.getParameter("correo"))==0){
+            request.getRequestDispatcher("AdministradorJSP.jsp").forward(request, response);
         }
         else{
-            contador++;
             try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -70,7 +64,7 @@ public class ServletVerificarAdmin extends HttpServlet {
 "         </style>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h2>Datos INCORRECTOS,intente nuevamente!</h2>");
+            out.println("<h2>Datos INCORRECTOS, intente nuevamente!</h2>");
             out.println(" <a href=\"LoginAdminsJSP.jsp\">Regresar</a>");
             out.println("</body>");
             out.println("</html>");
@@ -118,18 +112,20 @@ public class ServletVerificarAdmin extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private boolean buscar(java.lang.String arg0) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        esfera.WSAdmin port = service.getWSAdminPort();
-        return port.buscar(arg0);
-    }
+   
 
     private boolean ingresar(java.lang.String arg0) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
         esfera.WSAdmin port = service.getWSAdminPort();
         return port.ingresar(arg0);
+    }
+
+    private String buscar(java.lang.String arg0) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        esfera.WSAdmin port = service.getWSAdminPort();
+        return port.buscar(arg0);
     }
 
   

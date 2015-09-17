@@ -19,6 +19,9 @@
     <body>
         <jsp:useBean id="datos" scope="request" class="Bean.BeanAdmin" />
         <h1>Bienvenido:<jsp:getProperty name="datos" property="correo" /> ! </h1>
+        <form  method="POST" action="ServletVerAdmins">
+            <input type="submit" value="Ver Administradores" name="VerAdmins" />
+        </form>
         <a href="CrearAdminJSP.jsp">Crear Administrador</a><br>
         <a href="LoginAdminsJSP.jsp">Regresar</a>
         
