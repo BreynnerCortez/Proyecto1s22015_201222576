@@ -15,7 +15,6 @@ import javax.ejb.Stateless;
 public class BeanAdmin {
  private String correo;
  private String contrase;
- 
  public String getCorreo(){
      return correo;
  }
@@ -28,4 +27,8 @@ public class BeanAdmin {
  public void setContrase(String contrase){
      this.contrase=contrase;
  }
+ public String getMensaje(){
+     return contrase;
+ }
+
 }

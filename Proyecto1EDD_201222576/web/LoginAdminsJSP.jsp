@@ -19,11 +19,11 @@
     <body>
         <div style="text-align: center;" >
         <h1>Bienvenido Administrador!</h1></div>
-         <form action="ServletAdmin" method="POST">
+         <form  method="post" action="ServletVerificarAdmin" >
              <div style="text-align: right;">
-                    <%="Usuario"%>
+                    Usuario:
             <input type="text" name="correo"  value="" />
-                    <%="Contraseña"%>
+                    Contraseña:
             <input type="Password" name="contrase"   value="" />
             <input type="submit" value="Ingresar" name="Ingreso"  />
              </div>

@@ -17,9 +17,10 @@
          </style>
     </head>
     <body>
-        <h1>Hello World!</h1>
-        <%
-        out.println();
-        %>
+        <jsp:useBean id="datos" scope="request" class="Bean.BeanAdmin" />
+        <h1>Bienvenido:<jsp:getProperty name="datos" property="correo" /> ! </h1>
+        <a href="CrearAdminJSP.jsp">Crear Administrador</a><br>
+        <a href="LoginAdminsJSP.jsp">Regresar</a>
+        
     </body>
 </html>

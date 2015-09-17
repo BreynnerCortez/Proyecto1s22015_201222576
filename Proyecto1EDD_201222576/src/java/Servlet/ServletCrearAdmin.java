@@ -22,8 +22,8 @@ import javax.xml.ws.WebServiceRef;
  *
  * @author Breynner
  */
-@WebServlet(name = "ServletAdmin", urlPatterns = {"/ServletAdmin"})
-public class ServletAdmin extends HttpServlet {
+@WebServlet(name = "ServeletCrearAdmin", urlPatterns = {"/ServeletCrearAdmin"})
+public class ServletCrearAdmin extends HttpServlet {
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/192.168.1.130_8080/PruebaWeb/WSAdmin.wsdl")
     private Prueba service;
 
@@ -36,26 +36,62 @@ public class ServletAdmin extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+   
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         BeanAdmin datos=new BeanAdmin();
         datos.setCorreo(request.getParameter("correo"));
         datos.setContrase(request.getParameter("contrase"));
-        
+        request.setAttribute("datos", datos);
         
         String datosadm=request.getParameter("correo")+","+request.getParameter("contrase");
-        ingresar(datosadm);
         
         
-        request.setAttribute("datos", datos);
-        if(request.getParameter("correo").compareTo("admin")==0){
-        request.getRequestDispatcher("AdminsitradorJSP.jsp").forward(request, response);
-        }//else if(buscar(datosadm)){
-            
+        
+        if(request.getParameter("correo").compareTo("admin")==0 && request.getParameter("contrase").compareTo("admin")==0){
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Bienvenido a MuniGT!</title>");  
+            out.println("<style type=\"text/css\">\n" +
+"        body{\n" +
+"    background-image:url('https://upload.wikimedia.org/wikipedia/commons/d/d2/Bandera_Municipalidad_de_Guatemala.jpg');\n" +
+"        }\n" +
+"         </style>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h2>Usuario existente, intente con nuevos registros!</h2>");
+            out.println(" <a href=\"CrearAdminJSP.jsp\">Regresar</a>");
+            out.println("</body>");
+            out.println("</html>");
+        }
+        
+        }//else if(buscar(datosadm)==true){
+           // out.println("Ya Existen Registros!");
         //}
         else{
-            out.println("DATOS INVALIDOS!");
+            ingresar(datosadm);
+             try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Bienvenido a MuniGT!</title>");  
+            out.println("<style type=\"text/css\">\n" +
+"        body{\n" +
+"    background-image:url('https://upload.wikimedia.org/wikipedia/commons/d/d2/Bandera_Municipalidad_de_Guatemala.jpg');\n" +
+"        }\n" +
+"         </style>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h2>Usuario registrado!</h2>");
+            out.println(" <a href=\"CrearAdminJSP.jsp\">Regresar</a>");
+            out.println("</body>");
+            out.println("</html>");
+        }
         }
     }
 
@@ -98,13 +134,6 @@ public class ServletAdmin extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private boolean ingresar(java.lang.String arg0) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        esfera.WSAdmin port = service.getWSAdminPort();
-        return port.ingresar(arg0);
-    }
-
     private boolean buscar(java.lang.String arg0) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
@@ -112,4 +141,15 @@ public class ServletAdmin extends HttpServlet {
         return port.buscar(arg0);
     }
 
+    private boolean ingresar(java.lang.String arg0) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        esfera.WSAdmin port = service.getWSAdminPort();
+        return port.ingresar(arg0);
+    }
+
+  
+
+
+  
 }
