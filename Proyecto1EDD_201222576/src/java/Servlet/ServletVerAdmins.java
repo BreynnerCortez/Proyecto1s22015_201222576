@@ -37,6 +37,7 @@ public class ServletVerAdmins extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String todo="";
+        
         todo=imprimir();
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -55,6 +56,10 @@ public class ServletVerAdmins extends HttpServlet {
             out.println(" <a href=\"AdministradorJSP.jsp\">Regresar</a>");
             out.println("</body>");
             out.println("</html>");
+        }
+        Boolean a=limpiar();
+        if(a==true){
+            System.out.println("a");
         }
     }
 

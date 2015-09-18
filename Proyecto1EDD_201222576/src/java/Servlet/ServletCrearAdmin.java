@@ -46,6 +46,8 @@ public class ServletCrearAdmin extends HttpServlet {
         request.setAttribute("datos", datos);
         
         String datosadm=request.getParameter("correo")+","+request.getParameter("contrase");
+        String d= imprimir();
+        String a=buscar(datosadm);
         if(request.getParameter("correo").compareTo("admin")==0 && request.getParameter("contrase").compareTo("admin")==0){
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -143,6 +145,13 @@ public class ServletCrearAdmin extends HttpServlet {
         // If the calling of port operations may lead to race condition some synchronization is required.
         esfera.WSAdmin port = service.getWSAdminPort();
         return port.buscar(arg0);
+    }
+
+    private String imprimir() {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        esfera.WSAdmin port = service.getWSAdminPort();
+        return port.imprimir();
     }
 
  
