@@ -4,12 +4,6 @@
 <xsd:import namespace="http://Esfera/" schemaLocation="http://192.168.1.130:8080/PruebaWeb/WSAdmin?xsd=1" />
 </xsd:schema>
 </types>
-<message name="Ingresar">
-<part name="parameters" element="tns:Ingresar" />
-</message>
-<message name="IngresarResponse">
-<part name="parameters" element="tns:IngresarResponse" />
-</message>
 <message name="Buscar">
 <part name="parameters" element="tns:Buscar" />
 </message>
@@ -28,11 +22,13 @@
 <message name="limpiarResponse">
 <part name="parameters" element="tns:limpiarResponse" />
 </message>
+<message name="Ingresar">
+<part name="parameters" element="tns:Ingresar" />
+</message>
+<message name="IngresarResponse">
+<part name="parameters" element="tns:IngresarResponse" />
+</message>
 <portType name="WSAdmin">
-<operation name="Ingresar">
-<input wsam:Action="http://Esfera/WSAdmin/IngresarRequest" message="tns:Ingresar" />
-<output wsam:Action="http://Esfera/WSAdmin/IngresarResponse" message="tns:IngresarResponse" />
-</operation>
 <operation name="Buscar">
 <input wsam:Action="http://Esfera/WSAdmin/BuscarRequest" message="tns:Buscar" />
 <output wsam:Action="http://Esfera/WSAdmin/BuscarResponse" message="tns:BuscarResponse" />
@@ -45,18 +41,13 @@
 <input wsam:Action="http://Esfera/WSAdmin/limpiarRequest" message="tns:limpiar" />
 <output wsam:Action="http://Esfera/WSAdmin/limpiarResponse" message="tns:limpiarResponse" />
 </operation>
+<operation name="Ingresar">
+<input wsam:Action="http://Esfera/WSAdmin/IngresarRequest" message="tns:Ingresar" />
+<output wsam:Action="http://Esfera/WSAdmin/IngresarResponse" message="tns:IngresarResponse" />
+</operation>
 </portType>
 <binding name="WSAdminPortBinding" type="tns:WSAdmin">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
-<operation name="Ingresar">
-<soap:operation soapAction="" />
-<input>
-<soap:body use="literal" />
-</input>
-<output>
-<soap:body use="literal" />
-</output>
-</operation>
 <operation name="Buscar">
 <soap:operation soapAction="" />
 <input>
@@ -76,6 +67,15 @@
 </output>
 </operation>
 <operation name="limpiar">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="Ingresar">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
