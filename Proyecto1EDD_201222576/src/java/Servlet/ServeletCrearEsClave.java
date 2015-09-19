@@ -65,7 +65,7 @@ public class ServeletCrearEsClave extends HttpServlet {
               }
         }
         else{
-            ingresaresclave(datosadm);
+            ingresaresclave(datosadm+",0");
              request.getRequestDispatcher("CrearEstacionClaveJSP.jsp").forward(request, response);
         }
         

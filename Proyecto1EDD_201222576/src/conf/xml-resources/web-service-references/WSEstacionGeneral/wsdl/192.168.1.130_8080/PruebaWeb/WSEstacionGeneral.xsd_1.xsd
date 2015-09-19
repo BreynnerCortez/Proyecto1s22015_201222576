@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://Estructuras/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Estructuras/">
+
+<xs:element name="buscaresgeneral" type="tns:buscaresgeneral" />
+
+<xs:element name="buscaresgeneralResponse" type="tns:buscaresgeneralResponse" />
+
+<xs:element name="editaresgeneral" type="tns:editaresgeneral" />
+
+<xs:element name="editaresgeneralResponse" type="tns:editaresgeneralResponse" />
+
+<xs:element name="imprimiresgeneral" type="tns:imprimiresgeneral" />
+
+<xs:element name="imprimiresgeneralResponse" type="tns:imprimiresgeneralResponse" />
+
+<xs:element name="ingresaresgeneral" type="tns:ingresaresgeneral" />
+
+<xs:element name="ingresaresgeneralResponse" type="tns:ingresaresgeneralResponse" />
+
+<xs:element name="limpiaresgeneral" type="tns:limpiaresgeneral" />
+
+<xs:element name="limpiaresgeneralResponse" type="tns:limpiaresgeneralResponse" />
+
+<xs:complexType name="imprimiresgeneral">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="imprimiresgeneralResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscaresgeneral">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscaresgeneralResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="limpiaresgeneral">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="limpiaresgeneralResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editaresgeneral">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
+<xs:element name="arg1" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editaresgeneralResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ingresaresgeneral">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ingresaresgeneralResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

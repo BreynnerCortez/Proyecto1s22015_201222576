@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://Estructuras/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Estructuras/">
+
+<xs:element name="buscarchofer" type="tns:buscarchofer" />
+
+<xs:element name="buscarchoferResponse" type="tns:buscarchoferResponse" />
+
+<xs:element name="editarchofer" type="tns:editarchofer" />
+
+<xs:element name="editarchoferResponse" type="tns:editarchoferResponse" />
+
+<xs:element name="imprimirchofer" type="tns:imprimirchofer" />
+
+<xs:element name="imprimirchoferResponse" type="tns:imprimirchoferResponse" />
+
+<xs:element name="ingresarchofer" type="tns:ingresarchofer" />
+
+<xs:element name="ingresarchoferResponse" type="tns:ingresarchoferResponse" />
+
+<xs:element name="limpiarchofer" type="tns:limpiarchofer" />
+
+<xs:element name="limpiarchoferResponse" type="tns:limpiarchoferResponse" />
+
+<xs:complexType name="editarchofer">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
+<xs:element name="arg1" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editarchoferResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ingresarchofer">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ingresarchoferResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="limpiarchofer">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="limpiarchoferResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="imprimirchofer">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="imprimirchoferResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarchofer">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarchoferResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
