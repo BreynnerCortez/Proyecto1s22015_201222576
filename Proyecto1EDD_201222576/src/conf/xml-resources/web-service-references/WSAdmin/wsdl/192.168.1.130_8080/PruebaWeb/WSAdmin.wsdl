@@ -28,6 +28,12 @@
 <message name="ingresarResponse">
 <part name="parameters" element="tns:ingresarResponse" />
 </message>
+<message name="editar">
+<part name="parameters" element="tns:editar" />
+</message>
+<message name="editarResponse">
+<part name="parameters" element="tns:editarResponse" />
+</message>
 <portType name="WSAdmin">
 <operation name="buscar">
 <input wsam:Action="http://Estructuras/WSAdmin/buscarRequest" message="tns:buscar" />
@@ -44,6 +50,10 @@
 <operation name="ingresar">
 <input wsam:Action="http://Estructuras/WSAdmin/ingresarRequest" message="tns:ingresar" />
 <output wsam:Action="http://Estructuras/WSAdmin/ingresarResponse" message="tns:ingresarResponse" />
+</operation>
+<operation name="editar">
+<input wsam:Action="http://Estructuras/WSAdmin/editarRequest" message="tns:editar" />
+<output wsam:Action="http://Estructuras/WSAdmin/editarResponse" message="tns:editarResponse" />
 </operation>
 </portType>
 <binding name="WSAdminPortBinding" type="tns:WSAdmin">
@@ -76,6 +86,15 @@
 </output>
 </operation>
 <operation name="ingresar">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="editar">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />

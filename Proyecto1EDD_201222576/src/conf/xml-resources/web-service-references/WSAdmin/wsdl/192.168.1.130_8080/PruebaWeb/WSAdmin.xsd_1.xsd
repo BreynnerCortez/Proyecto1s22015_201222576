@@ -4,6 +4,10 @@
 
 <xs:element name="buscarResponse" type="tns:buscarResponse" />
 
+<xs:element name="editar" type="tns:editar" />
+
+<xs:element name="editarResponse" type="tns:editarResponse" />
+
 <xs:element name="imprimir" type="tns:imprimir" />
 
 <xs:element name="imprimirResponse" type="tns:imprimirResponse" />
@@ -45,6 +49,19 @@
 <xs:complexType name="limpiarResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editar">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
+<xs:element name="arg1" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editarResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
 

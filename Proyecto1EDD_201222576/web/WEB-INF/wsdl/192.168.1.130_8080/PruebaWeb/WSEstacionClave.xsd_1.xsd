@@ -4,6 +4,10 @@
 
 <xs:element name="buscaresclaveResponse" type="tns:buscaresclaveResponse" />
 
+<xs:element name="editaresclave" type="tns:editaresclave" />
+
+<xs:element name="editaresclaveResponse" type="tns:editaresclaveResponse" />
+
 <xs:element name="imprimiresclave" type="tns:imprimiresclave" />
 
 <xs:element name="imprimiresclaveResponse" type="tns:imprimiresclaveResponse" />
@@ -37,6 +41,19 @@
 <xs:complexType name="ingresaresclaveResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editaresclave">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
+<xs:element name="arg1" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editaresclaveResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
 

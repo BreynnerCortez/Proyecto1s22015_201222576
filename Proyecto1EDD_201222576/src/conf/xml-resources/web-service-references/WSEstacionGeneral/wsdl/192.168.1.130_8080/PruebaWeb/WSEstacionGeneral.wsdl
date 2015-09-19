@@ -4,11 +4,11 @@
 <xsd:import namespace="http://Estructuras/" schemaLocation="http://192.168.1.130:8080/PruebaWeb/WSEstacionGeneral?xsd=1" />
 </xsd:schema>
 </types>
-<message name="editaresgeneral">
-<part name="parameters" element="tns:editaresgeneral" />
+<message name="limpiaresgeneral">
+<part name="parameters" element="tns:limpiaresgeneral" />
 </message>
-<message name="editaresgeneralResponse">
-<part name="parameters" element="tns:editaresgeneralResponse" />
+<message name="limpiaresgeneralResponse">
+<part name="parameters" element="tns:limpiaresgeneralResponse" />
 </message>
 <message name="buscaresgeneral">
 <part name="parameters" element="tns:buscaresgeneral" />
@@ -16,17 +16,11 @@
 <message name="buscaresgeneralResponse">
 <part name="parameters" element="tns:buscaresgeneralResponse" />
 </message>
-<message name="limpiaresgeneral">
-<part name="parameters" element="tns:limpiaresgeneral" />
+<message name="editaresgeneral">
+<part name="parameters" element="tns:editaresgeneral" />
 </message>
-<message name="limpiaresgeneralResponse">
-<part name="parameters" element="tns:limpiaresgeneralResponse" />
-</message>
-<message name="ingresaresgeneral">
-<part name="parameters" element="tns:ingresaresgeneral" />
-</message>
-<message name="ingresaresgeneralResponse">
-<part name="parameters" element="tns:ingresaresgeneralResponse" />
+<message name="editaresgeneralResponse">
+<part name="parameters" element="tns:editaresgeneralResponse" />
 </message>
 <message name="imprimiresgeneral">
 <part name="parameters" element="tns:imprimiresgeneral" />
@@ -34,31 +28,37 @@
 <message name="imprimiresgeneralResponse">
 <part name="parameters" element="tns:imprimiresgeneralResponse" />
 </message>
+<message name="ingresaresgeneral">
+<part name="parameters" element="tns:ingresaresgeneral" />
+</message>
+<message name="ingresaresgeneralResponse">
+<part name="parameters" element="tns:ingresaresgeneralResponse" />
+</message>
 <portType name="WSEstacionGeneral">
-<operation name="editaresgeneral">
-<input wsam:Action="http://Estructuras/WSEstacionGeneral/editaresgeneralRequest" message="tns:editaresgeneral" />
-<output wsam:Action="http://Estructuras/WSEstacionGeneral/editaresgeneralResponse" message="tns:editaresgeneralResponse" />
+<operation name="limpiaresgeneral">
+<input wsam:Action="http://Estructuras/WSEstacionGeneral/limpiaresgeneralRequest" message="tns:limpiaresgeneral" />
+<output wsam:Action="http://Estructuras/WSEstacionGeneral/limpiaresgeneralResponse" message="tns:limpiaresgeneralResponse" />
 </operation>
 <operation name="buscaresgeneral">
 <input wsam:Action="http://Estructuras/WSEstacionGeneral/buscaresgeneralRequest" message="tns:buscaresgeneral" />
 <output wsam:Action="http://Estructuras/WSEstacionGeneral/buscaresgeneralResponse" message="tns:buscaresgeneralResponse" />
 </operation>
-<operation name="limpiaresgeneral">
-<input wsam:Action="http://Estructuras/WSEstacionGeneral/limpiaresgeneralRequest" message="tns:limpiaresgeneral" />
-<output wsam:Action="http://Estructuras/WSEstacionGeneral/limpiaresgeneralResponse" message="tns:limpiaresgeneralResponse" />
-</operation>
-<operation name="ingresaresgeneral">
-<input wsam:Action="http://Estructuras/WSEstacionGeneral/ingresaresgeneralRequest" message="tns:ingresaresgeneral" />
-<output wsam:Action="http://Estructuras/WSEstacionGeneral/ingresaresgeneralResponse" message="tns:ingresaresgeneralResponse" />
+<operation name="editaresgeneral">
+<input wsam:Action="http://Estructuras/WSEstacionGeneral/editaresgeneralRequest" message="tns:editaresgeneral" />
+<output wsam:Action="http://Estructuras/WSEstacionGeneral/editaresgeneralResponse" message="tns:editaresgeneralResponse" />
 </operation>
 <operation name="imprimiresgeneral">
 <input wsam:Action="http://Estructuras/WSEstacionGeneral/imprimiresgeneralRequest" message="tns:imprimiresgeneral" />
 <output wsam:Action="http://Estructuras/WSEstacionGeneral/imprimiresgeneralResponse" message="tns:imprimiresgeneralResponse" />
 </operation>
+<operation name="ingresaresgeneral">
+<input wsam:Action="http://Estructuras/WSEstacionGeneral/ingresaresgeneralRequest" message="tns:ingresaresgeneral" />
+<output wsam:Action="http://Estructuras/WSEstacionGeneral/ingresaresgeneralResponse" message="tns:ingresaresgeneralResponse" />
+</operation>
 </portType>
 <binding name="WSEstacionGeneralPortBinding" type="tns:WSEstacionGeneral">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
-<operation name="editaresgeneral">
+<operation name="limpiaresgeneral">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -76,16 +76,7 @@
 <soap:body use="literal" />
 </output>
 </operation>
-<operation name="limpiaresgeneral">
-<soap:operation soapAction="" />
-<input>
-<soap:body use="literal" />
-</input>
-<output>
-<soap:body use="literal" />
-</output>
-</operation>
-<operation name="ingresaresgeneral">
+<operation name="editaresgeneral">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -95,6 +86,15 @@
 </output>
 </operation>
 <operation name="imprimiresgeneral">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="ingresaresgeneral">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
