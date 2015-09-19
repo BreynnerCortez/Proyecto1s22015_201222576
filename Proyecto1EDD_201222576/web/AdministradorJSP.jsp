@@ -18,11 +18,13 @@
     </head>
     <body>
         <jsp:useBean id="datos" scope="request" class="Bean.BeanAdmin" />
-        <h1>Bienvenido:<jsp:getProperty name="datos" property="correo" /> ! </h1>
+        <h1>Bienvenido: <jsp:getProperty name="datos" property="correoAdmin" />! </h1>
         <form  method="POST" action="ServletVerAdmins">
             <input type="submit" value="Ver Administradores" name="VerAdmins" />
         </form><br>
 <pre><a href="CrearAdminJSP.jsp">Crear Administrador</a>     <a href="CrearEstacionClaveJSP.jsp">Crear Estacion Clave</a></pre>
+        <br>
+        <a href="ServeletVerEsClave">Ver Estaciones Clave</a>
         <br>
         <a href="LoginAdminsJSP.jsp">Regresar</a>
         

@@ -5,7 +5,8 @@
  */
 package Servlet;
 
-import estructuras.Arbol_0020Administradores;
+import estructuras.WSAdmin;
+import estructuras.WSAdminService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -22,7 +23,8 @@ import javax.xml.ws.WebServiceRef;
 @WebServlet(name = "ServletVerAdmins", urlPatterns = {"/ServletVerAdmins"})
 public class ServletVerAdmins extends HttpServlet {
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/192.168.1.130_8080/PruebaWeb/WSAdmin.wsdl")
-    private Arbol_0020Administradores service_1;
+    private WSAdminService service;
+    
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -105,31 +107,26 @@ public class ServletVerAdmins extends HttpServlet {
     private String buscar(java.lang.String arg0) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        estructuras.WSAdmin port = service_1.getWSAdminPort();
+        estructuras.WSAdmin port = service.getWSAdminPort();
         return port.buscar(arg0);
-    }
-
-    private boolean ingresar(java.lang.String arg0) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        estructuras.WSAdmin port = service_1.getWSAdminPort();
-        return port.ingresar(arg0);
     }
 
     private String imprimir() {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        estructuras.WSAdmin port = service_1.getWSAdminPort();
+        estructuras.WSAdmin port = service.getWSAdminPort();
         return port.imprimir();
     }
 
     private boolean limpiar() {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        estructuras.WSAdmin port = service_1.getWSAdminPort();
+        estructuras.WSAdmin port = service.getWSAdminPort();
         return port.limpiar();
     }
 
+    
+  
    
 
 

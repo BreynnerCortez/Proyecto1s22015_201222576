@@ -1,28 +1,28 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://Estructuras/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Estructuras/">
 
-<xs:element name="Buscar" type="tns:Buscar" />
+<xs:element name="buscar" type="tns:buscar" />
 
-<xs:element name="BuscarResponse" type="tns:BuscarResponse" />
-
-<xs:element name="Ingresar" type="tns:Ingresar" />
-
-<xs:element name="IngresarResponse" type="tns:IngresarResponse" />
+<xs:element name="buscarResponse" type="tns:buscarResponse" />
 
 <xs:element name="imprimir" type="tns:imprimir" />
 
 <xs:element name="imprimirResponse" type="tns:imprimirResponse" />
 
+<xs:element name="ingresar" type="tns:ingresar" />
+
+<xs:element name="ingresarResponse" type="tns:ingresarResponse" />
+
 <xs:element name="limpiar" type="tns:limpiar" />
 
 <xs:element name="limpiarResponse" type="tns:limpiarResponse" />
 
-<xs:complexType name="Ingresar">
+<xs:complexType name="ingresar">
 <xs:sequence>
 <xs:element name="arg0" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="IngresarResponse">
+<xs:complexType name="ingresarResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" />
 </xs:sequence>
@@ -48,13 +48,13 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="Buscar">
+<xs:complexType name="buscar">
 <xs:sequence>
 <xs:element name="arg0" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="BuscarResponse">
+<xs:complexType name="buscarResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0" />
 </xs:sequence>

@@ -18,7 +18,7 @@
     </head>
     <body>
         <h1>Bienvenido a Creacion de Estaciones Clave.</h1>
-        <form action="ServeletCrearEsCla" method="POST">
+        <form action="ServeletCrearEsClave" method="POST">
             <div style="text-align: left;">
                     ID numerico:
             <input type="text" name="id"  value="" /> <br> <br>

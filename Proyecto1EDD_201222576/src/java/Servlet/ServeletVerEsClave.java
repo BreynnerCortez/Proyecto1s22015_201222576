@@ -5,8 +5,7 @@
  */
 package Servlet;
 
-import Bean.BeanAdmin;
-import estructuras.WSAdminService;
+import estructuras.WSEstacionClaveService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -20,11 +19,10 @@ import javax.xml.ws.WebServiceRef;
  *
  * @author Breynner
  */
-@WebServlet(name = "ServletVerificarAdmin", urlPatterns = {"/ServletVerificarAdmin"})
-public class ServletVerificarAdmin extends HttpServlet {
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/192.168.1.130_8080/PruebaWeb/WSAdmin.wsdl")
-    private WSAdminService service;
-   
+@WebServlet(name = "ServeletVerEsClave", urlPatterns = {"/ServeletVerEsClave"})
+public class ServeletVerEsClave extends HttpServlet {
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/192.168.1.130_8080/PruebaWeb/WSEstacionClave.wsdl")
+    private WSEstacionClaveService service;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,25 +33,13 @@ public class ServletVerificarAdmin extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-     public int contador=0;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        BeanAdmin datos=new BeanAdmin();
-        datos.setCorreoAdmin(request.getParameter("correo"));
-        datos.setContraAdmin(request.getParameter("contrase"));
-        request.setAttribute("datos", datos);
+        String todo="";
         
-         String datosadm=request.getParameter("correo")+","+request.getParameter("contrase");
-        if(request.getParameter("correo").compareTo("admin")==0 && request.getParameter("contrase").compareTo("admin")==0){
-            request.getRequestDispatcher("AdministradorJSP.jsp").forward(request, response);
-        }else if(buscar(datosadm)!=null){
-           String co=buscar(datosadm).split(",")[0];
-           String con=buscar(datosadm).split(",")[1];
-          if(co.compareTo(request.getParameter("correo"))==0 && con.compareTo(request.getParameter("contrase"))==0){
-              request.getRequestDispatcher("AdministradorJSP.jsp").forward(request, response);
-          }else{
-            try (PrintWriter out = response.getWriter()) {
+        todo=imprimiresclave();
+        try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -66,36 +52,14 @@ public class ServletVerificarAdmin extends HttpServlet {
 "         </style>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h2>Contraseña INCORRECTA, intente nuevamente!</h2>");
-            out.println(" <a href=\"LoginAdminsJSP.jsp\">Regresar</a>");
+            out.println("<h3>"+todo+"</h3>");
+            out.println(" <a href=\"AdministradorJSP.jsp\">Regresar</a>");
             out.println("</body>");
             out.println("</html>");
         }
-            
-        }
-          
-            
-        }
-        else{
-            try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Bienvenido a MuniGT!</title>");  
-            out.println("<style type=\"text/css\">\n" +
-"        body{\n" +
-"    background-image:url('https://upload.wikimedia.org/wikipedia/commons/d/d2/Bandera_Municipalidad_de_Guatemala.jpg');\n" +
-"        }\n" +
-"         </style>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h2>Datos INCORRECTOS, intente nuevamente!</h2>");
-            out.println(" <a href=\"LoginAdminsJSP.jsp\">Regresar</a>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-            
+        Boolean a=limpiaresclave();
+        if(a==true){
+            System.out.println("a");
         }
     }
 
@@ -138,23 +102,25 @@ public class ServletVerificarAdmin extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private String buscar(java.lang.String arg0) {
+    private String buscaresclave(java.lang.String arg0) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        estructuras.WSAdmin port = service.getWSAdminPort();
-        return port.buscar(arg0);
+        estructuras.WSEstacionClave port = service.getWSEstacionClavePort();
+        return port.buscaresclave(arg0);
     }
 
-    private boolean ingresar(java.lang.String arg0) {
+    private String imprimiresclave() {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        estructuras.WSAdmin port = service.getWSAdminPort();
-        return port.ingresar(arg0);
+        estructuras.WSEstacionClave port = service.getWSEstacionClavePort();
+        return port.imprimiresclave();
     }
 
+    private boolean limpiaresclave() {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        estructuras.WSEstacionClave port = service.getWSEstacionClavePort();
+        return port.limpiaresclave();
+    }
 
-
-  
-
-  
 }

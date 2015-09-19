@@ -25,7 +25,7 @@
                     Contraseña:
                     <input type="text" name="contrase"   value="" /> <br><br>
             <input type="submit" value="Registrar" name="Registro"  />
-            </div><br>
+             </div><br>
             <a href="AdministradorJSP.jsp">Regresar</a>
         </form>
     </body>

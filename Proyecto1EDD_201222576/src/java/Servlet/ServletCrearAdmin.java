@@ -6,7 +6,8 @@
 package Servlet;
 
 import Bean.BeanAdmin;
-import estructuras.Arbol_0020Administradores;
+import estructuras.WSAdmin;
+import estructuras.WSAdminService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import static java.lang.System.out;
@@ -24,7 +25,7 @@ import javax.xml.ws.WebServiceRef;
 @WebServlet(name = "ServeletCrearAdmin", urlPatterns = {"/ServeletCrearAdmin"})
 public class ServletCrearAdmin extends HttpServlet {
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/192.168.1.130_8080/PruebaWeb/WSAdmin.wsdl")
-    private Arbol_0020Administradores service_1;
+    private WSAdminService service;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -67,7 +68,9 @@ public class ServletCrearAdmin extends HttpServlet {
             out.println("</html>");
         }
         
-        }else if(buscar(datosadm)!=null && buscar(datosadm).compareTo(request.getParameter("correo"))==0){
+        }else if(buscar(datosadm)!=null){
+            String co=buscar(datosadm).split(",")[0];
+            if(co.compareTo(request.getParameter("correo"))==0){
             try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -86,6 +89,7 @@ public class ServletCrearAdmin extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
         }
+            }
         }
         else{
             ingresar(datosadm);
@@ -135,24 +139,25 @@ public class ServletCrearAdmin extends HttpServlet {
     private String buscar(java.lang.String arg0) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        estructuras.WSAdmin port = service_1.getWSAdminPort();
+        estructuras.WSAdmin port = service.getWSAdminPort();
         return port.buscar(arg0);
-    }
-
-    private boolean ingresar(java.lang.String arg0) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        estructuras.WSAdmin port = service_1.getWSAdminPort();
-        return port.ingresar(arg0);
     }
 
     private String imprimir() {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        estructuras.WSAdmin port = service_1.getWSAdminPort();
+        estructuras.WSAdmin port = service.getWSAdminPort();
         return port.imprimir();
     }
 
+    private boolean ingresar(java.lang.String arg0) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        estructuras.WSAdmin port = service.getWSAdminPort();
+        return port.ingresar(arg0);
+    }
+
+    
 
 
   
