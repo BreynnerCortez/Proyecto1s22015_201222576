@@ -26,22 +26,6 @@
             <isset property="conf.dir"/>
         </condition>
     </target>
-    <target name="wsimport-client-VolumenEsfera" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/VolumenEsfera"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/VolumenEsfera" destdir="${build.generated.dir}/jax-wsCache/VolumenEsfera" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/VolumenEsfera/wsdl/192.168.1.130_8080/PruebaWeb/VolumenEsfera.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://192.168.1.130:8080/PruebaWeb/VolumenEsfera?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/VolumenEsfera/wsdl/192.168.1.130_8080/PruebaWeb/VolumenEsfera.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/VolumenEsfera"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/VolumenEsfera">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-VolumenEsfera" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/esfera"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/VolumenEsfera"/>
-    </target>
     <target name="wsimport-client-WSAdmin" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/WSAdmin"/>
         <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSAdmin" destdir="${build.generated.dir}/jax-wsCache/WSAdmin" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSAdmin/wsdl/192.168.1.130_8080/PruebaWeb/WSAdmin.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://192.168.1.130:8080/PruebaWeb/WSAdmin?wsdl" xnocompile="true" xendorsed="true">
@@ -55,8 +39,24 @@
         </copy>
     </target>
     <target name="wsimport-client-clean-WSAdmin" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/esfera"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/estructuras"/>
         <delete dir="${build.generated.dir}/jax-wsCache/WSAdmin"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-VolumenEsfera, wsimport-client-WSAdmin"/>
+    <target name="wsimport-client-WSEstacionClave" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSEstacionClave"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSEstacionClave" destdir="${build.generated.dir}/jax-wsCache/WSEstacionClave" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSEstacionClave/wsdl/192.168.1.130_8080/PruebaWeb/WSEstacionClave.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://192.168.1.130:8080/PruebaWeb/WSEstacionClave?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSEstacionClave/wsdl/192.168.1.130_8080/PruebaWeb/WSEstacionClave.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSEstacionClave"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSEstacionClave">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSEstacionClave" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/estructuras"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSEstacionClave"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-WSAdmin, wsimport-client-WSEstacionClave"/>
 </project>

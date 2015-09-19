@@ -13,18 +13,41 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class BeanAdmin {
- private String correo;
- private String contrase;
- public String getCorreo(){
-     return correo;
+ private String correoadmin;
+ private String contraseadmin;
+ private String idesclave;
+ private String nombreesclave;
+ private String contraesclave;
+ 
+ public String getCorreoAdmin(){
+     return correoadmin;
  }
- public void setCorreo(String correo){
-     this.correo=correo;
+ public void setCorreoAdmin(String correo){
+     this.correoadmin=correo;
  }
- public String getContrase(){
-     return contrase;
+ public String getContraAdmin(){
+     return contraseadmin;
  }
- public void setContrase(String contrase){
-     this.contrase=contrase;
+ public void setContraAdmin(String contrase){
+     this.contraseadmin=contrase;
  }
+ public String getIdEsClave(){
+     return idesclave;
+ }
+ public void setIdEsClave(String id){
+     this.idesclave=id;
+ }
+  public String getNombreEsClave(){
+     return nombreesclave;
+ }
+ public void setNombreEsClave(String nombre){
+     this.nombreesclave=nombre;
+ }
+  public String getContraEsClave(){
+     return contraesclave;
+ }
+ public void setContraEsClave(String contra){
+     this.contraesclave=contra;
+ }
+ 
 }

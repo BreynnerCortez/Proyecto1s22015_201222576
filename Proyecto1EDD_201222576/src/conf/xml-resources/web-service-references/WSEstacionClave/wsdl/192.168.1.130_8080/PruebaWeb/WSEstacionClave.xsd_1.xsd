@@ -28,16 +28,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="imprimir">
-<xs:sequence />
-</xs:complexType>
-
-<xs:complexType name="imprimirResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="limpiar">
 <xs:sequence />
 </xs:complexType>
@@ -45,6 +35,16 @@
 <xs:complexType name="limpiarResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="imprimir">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="imprimirResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
 

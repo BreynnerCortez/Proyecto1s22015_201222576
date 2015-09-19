@@ -6,8 +6,7 @@
 package Servlet;
 
 import Bean.BeanAdmin;
-import esfera.Buscar;
-import esfera.Prueba;
+import estructuras.Arbol_0020Administradores;
 import java.io.IOException;
 import java.io.PrintWriter;
 import static java.lang.System.out;
@@ -25,7 +24,7 @@ import javax.xml.ws.WebServiceRef;
 @WebServlet(name = "ServeletCrearAdmin", urlPatterns = {"/ServeletCrearAdmin"})
 public class ServletCrearAdmin extends HttpServlet {
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/192.168.1.130_8080/PruebaWeb/WSAdmin.wsdl")
-    private Prueba service;
+    private Arbol_0020Administradores service_1;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,8 +40,8 @@ public class ServletCrearAdmin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         BeanAdmin datos=new BeanAdmin();
-        datos.setCorreo(request.getParameter("correo"));
-        datos.setContrase(request.getParameter("contrase"));
+        datos.setCorreoAdmin(request.getParameter("correo"));
+        datos.setContraAdmin(request.getParameter("contrase"));
         request.setAttribute("datos", datos);
         
         String datosadm=request.getParameter("correo")+","+request.getParameter("contrase");
@@ -133,28 +132,27 @@ public class ServletCrearAdmin extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private boolean ingresar(java.lang.String arg0) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        esfera.WSAdmin port = service.getWSAdminPort();
-        return port.ingresar(arg0);
-    }
-
     private String buscar(java.lang.String arg0) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        esfera.WSAdmin port = service.getWSAdminPort();
+        estructuras.WSAdmin port = service_1.getWSAdminPort();
         return port.buscar(arg0);
+    }
+
+    private boolean ingresar(java.lang.String arg0) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        estructuras.WSAdmin port = service_1.getWSAdminPort();
+        return port.ingresar(arg0);
     }
 
     private String imprimir() {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        esfera.WSAdmin port = service.getWSAdminPort();
+        estructuras.WSAdmin port = service_1.getWSAdminPort();
         return port.imprimir();
     }
 
- 
 
 
   
