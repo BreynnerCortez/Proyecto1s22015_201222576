@@ -21,8 +21,9 @@
         <h1>Bienvenido:<jsp:getProperty name="datos" property="correo" /> ! </h1>
         <form  method="POST" action="ServletVerAdmins">
             <input type="submit" value="Ver Administradores" name="VerAdmins" />
-        </form>
-        <a href="CrearAdminJSP.jsp">Crear Administrador</a><br>
+        </form><br>
+<pre><a href="CrearAdminJSP.jsp">Crear Administrador</a>     <a href="CrearEstacionClaveJSP.jsp">Crear Estacion Clave</a></pre>
+        <br>
         <a href="LoginAdminsJSP.jsp">Regresar</a>
         
     </body>

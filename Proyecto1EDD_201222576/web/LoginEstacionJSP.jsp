@@ -21,17 +21,13 @@
         <div style="text-align: center;" >
         <h1>Bienvenido Estacion!</h1></div>
         <form action="EstacionJSP.jsp" method="POST">
-            <<%--    FUNCION CLICK      <% 
-                
-            if(request.getParameter("Ingreso")!= null) {
-              %>
-            You clicked 
-            <%= request.getParameter("Ingreso") %>
-        <%
-            }
-        %> --%>
             
             <div style="text-align: right;">
+                Seleccione tipo de Estacion:
+                <select name="Estaciones" size="2">
+                    <option>Clave</option>
+                    <option>General</option>
+                </select>
                    <%="Usuario"%>
               <input type="text" name="usuario"  value="" />
                    <%="Contraseña"%>
@@ -45,19 +41,3 @@
             <img src="estaciones.jpg" width="630" height="1430" alt="estaciones"/></div>
     </body>
 </html>
-    <%-- start web service invocation --%><hr/>
-    <%
-           
-            if(request.getParameter("Ingreso")!= null) {
-                out.println(request.getParameter("Ingreso")+"!") ;
-            }
-            if(request.getParameter("Prueba")!= null) {
-                out.println(request.getParameter("Prueba")+"!") ;
-            }
-           
-       
-       
-       
-  
-    %>
-    <%-- end web service invocation --%><hr/>

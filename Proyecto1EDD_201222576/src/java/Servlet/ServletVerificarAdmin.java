@@ -47,58 +47,57 @@ public class ServletVerificarAdmin extends HttpServlet {
          String datosadm=request.getParameter("correo")+","+request.getParameter("contrase");
         if(request.getParameter("correo").compareTo("admin")==0 && request.getParameter("contrase").compareTo("admin")==0){
             request.getRequestDispatcher("AdministradorJSP.jsp").forward(request, response);
-        }else if(buscar(datosadm)!=""){
-            if(buscar(datosadm).split(",")[0].compareTo(request.getParameter("correo"))==0 && buscar(datosadm).split(",")[1].compareTo(request.getParameter("contrase"))==0)
-            {request.getRequestDispatcher("AdministradorJSP.jsp").forward(request, response);
-            }else{
-                                    try (PrintWriter out = response.getWriter()) {
-                                /* TODO output your page here. You may use following sample code. */
-                                out.println("<!DOCTYPE html>");
-                                out.println("<html>");
-                                out.println("<head>");
-                                out.println("<title>Bienvenido a MuniGT!</title>");  
-                                out.println("<style type=\"text/css\">\n" +
-                    "        body{\n" +
-                    "    background-image:url('https://upload.wikimedia.org/wikipedia/commons/d/d2/Bandera_Municipalidad_de_Guatemala.jpg');\n" +
-                    "        }\n" +
-                    "         </style>");
-                                out.println("</head>");
-                                out.println("<body>");
-                                out.println("<h2>Datos INCORRECTOS, intente nuevamente!</h2>");
-                                out.println(" <a href=\"LoginAdminsJSP.jsp\">Regresar</a>");
-                                out.println("</body>");
-                                out.println("</html>");
-                            }
-            }
+        }else if(buscar(datosadm)!=null){
+           String co=buscar(datosadm).split(",")[0];
+           String con=buscar(datosadm).split(",")[1];
+          if(co.compareTo(request.getParameter("correo"))==0 && con.compareTo(request.getParameter("contrase"))==0){
+              request.getRequestDispatcher("AdministradorJSP.jsp").forward(request, response);
+          }else{
+            try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Bienvenido a MuniGT!</title>");  
+            out.println("<style type=\"text/css\">\n" +
+"        body{\n" +
+"    background-image:url('https://upload.wikimedia.org/wikipedia/commons/d/d2/Bandera_Municipalidad_de_Guatemala.jpg');\n" +
+"        }\n" +
+"         </style>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h2>Contraseña INCORRECTA, intente nuevamente!</h2>");
+            out.println(" <a href=\"LoginAdminsJSP.jsp\">Regresar</a>");
+            out.println("</body>");
+            out.println("</html>");
+        }
+            
+        }
+          
+            
         }
         else{
-                        try (PrintWriter out = response.getWriter()) {
-                        /* TODO output your page here. You may use following sample code. */
-                        out.println("<!DOCTYPE html>");
-                        out.println("<html>");
-                        out.println("<head>");
-                        out.println("<title>Bienvenido a MuniGT!</title>");  
-                        out.println("<style type=\"text/css\">\n" +
-            "        body{\n" +
-            "    background-image:url('https://upload.wikimedia.org/wikipedia/commons/d/d2/Bandera_Municipalidad_de_Guatemala.jpg');\n" +
-            "        }\n" +
-            "         </style>");
-                        out.println("</head>");
-                        out.println("<body>");
-                        out.println("<h2>Datos INCORRECTOS, intente nuevamente!</h2>");
-                        out.println(" <a href=\"LoginAdminsJSP.jsp\">Regresar</a>");
-                        out.println("</body>");
-                        out.println("</html>");
-                    }
+            try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Bienvenido a MuniGT!</title>");  
+            out.println("<style type=\"text/css\">\n" +
+"        body{\n" +
+"    background-image:url('https://upload.wikimedia.org/wikipedia/commons/d/d2/Bandera_Municipalidad_de_Guatemala.jpg');\n" +
+"        }\n" +
+"         </style>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h2>Datos INCORRECTOS, intente nuevamente!</h2>");
+            out.println(" <a href=\"LoginAdminsJSP.jsp\">Regresar</a>");
+            out.println("</body>");
+            out.println("</html>");
+        }
             
         }
     }
-    
-    
-    public void datosinco(){
-        
-    }
-    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

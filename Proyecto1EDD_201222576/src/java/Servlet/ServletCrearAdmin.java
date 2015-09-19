@@ -68,7 +68,7 @@ public class ServletCrearAdmin extends HttpServlet {
             out.println("</html>");
         }
         
-        }else if(buscar(datosadm)!="" && buscar(datosadm).compareTo(request.getParameter("correo"))==0){
+        }else if(buscar(datosadm)!=null && buscar(datosadm).compareTo(request.getParameter("correo"))==0){
             try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
