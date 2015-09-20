@@ -4,23 +4,11 @@
 <xsd:import namespace="http://Estructuras/" schemaLocation="http://192.168.1.130:8080/PruebaWeb/WSChofer?xsd=1" />
 </xsd:schema>
 </types>
-<message name="editarchofer">
-<part name="parameters" element="tns:editarchofer" />
-</message>
-<message name="editarchoferResponse">
-<part name="parameters" element="tns:editarchoferResponse" />
-</message>
 <message name="imprimirchofer">
 <part name="parameters" element="tns:imprimirchofer" />
 </message>
 <message name="imprimirchoferResponse">
 <part name="parameters" element="tns:imprimirchoferResponse" />
-</message>
-<message name="limpiarchofer">
-<part name="parameters" element="tns:limpiarchofer" />
-</message>
-<message name="limpiarchoferResponse">
-<part name="parameters" element="tns:limpiarchoferResponse" />
 </message>
 <message name="ingresarchofer">
 <part name="parameters" element="tns:ingresarchofer" />
@@ -28,55 +16,89 @@
 <message name="ingresarchoferResponse">
 <part name="parameters" element="tns:ingresarchoferResponse" />
 </message>
+<message name="limpiarchofer">
+<part name="parameters" element="tns:limpiarchofer" />
+</message>
+<message name="limpiarchoferResponse">
+<part name="parameters" element="tns:limpiarchoferResponse" />
+</message>
 <message name="buscarchofer">
 <part name="parameters" element="tns:buscarchofer" />
 </message>
 <message name="buscarchoferResponse">
 <part name="parameters" element="tns:buscarchoferResponse" />
 </message>
+<message name="editarchofer">
+<part name="parameters" element="tns:editarchofer" />
+</message>
+<message name="editarchoferResponse">
+<part name="parameters" element="tns:editarchoferResponse" />
+</message>
+<message name="apuntarnodochofer">
+<part name="parameters" element="tns:apuntarnodochofer" />
+</message>
+<message name="apuntarnodochoferResponse">
+<part name="parameters" element="tns:apuntarnodochoferResponse" />
+</message>
+<message name="agregardianodochofer">
+<part name="parameters" element="tns:agregardianodochofer" />
+</message>
+<message name="agregardianodochoferResponse">
+<part name="parameters" element="tns:agregardianodochoferResponse" />
+</message>
+<message name="agregarbusadiachofer">
+<part name="parameters" element="tns:agregarbusadiachofer" />
+</message>
+<message name="agregarbusadiachoferResponse">
+<part name="parameters" element="tns:agregarbusadiachoferResponse" />
+</message>
+<message name="agregarhoraAbusydiachofer">
+<part name="parameters" element="tns:agregarhoraAbusydiachofer" />
+</message>
+<message name="agregarhoraAbusydiachoferResponse">
+<part name="parameters" element="tns:agregarhoraAbusydiachoferResponse" />
+</message>
 <portType name="WSChofer">
-<operation name="editarchofer">
-<input wsam:Action="http://Estructuras/WSChofer/editarchoferRequest" message="tns:editarchofer" />
-<output wsam:Action="http://Estructuras/WSChofer/editarchoferResponse" message="tns:editarchoferResponse" />
-</operation>
 <operation name="imprimirchofer">
 <input wsam:Action="http://Estructuras/WSChofer/imprimirchoferRequest" message="tns:imprimirchofer" />
 <output wsam:Action="http://Estructuras/WSChofer/imprimirchoferResponse" message="tns:imprimirchoferResponse" />
-</operation>
-<operation name="limpiarchofer">
-<input wsam:Action="http://Estructuras/WSChofer/limpiarchoferRequest" message="tns:limpiarchofer" />
-<output wsam:Action="http://Estructuras/WSChofer/limpiarchoferResponse" message="tns:limpiarchoferResponse" />
 </operation>
 <operation name="ingresarchofer">
 <input wsam:Action="http://Estructuras/WSChofer/ingresarchoferRequest" message="tns:ingresarchofer" />
 <output wsam:Action="http://Estructuras/WSChofer/ingresarchoferResponse" message="tns:ingresarchoferResponse" />
 </operation>
+<operation name="limpiarchofer">
+<input wsam:Action="http://Estructuras/WSChofer/limpiarchoferRequest" message="tns:limpiarchofer" />
+<output wsam:Action="http://Estructuras/WSChofer/limpiarchoferResponse" message="tns:limpiarchoferResponse" />
+</operation>
 <operation name="buscarchofer">
 <input wsam:Action="http://Estructuras/WSChofer/buscarchoferRequest" message="tns:buscarchofer" />
 <output wsam:Action="http://Estructuras/WSChofer/buscarchoferResponse" message="tns:buscarchoferResponse" />
 </operation>
+<operation name="editarchofer">
+<input wsam:Action="http://Estructuras/WSChofer/editarchoferRequest" message="tns:editarchofer" />
+<output wsam:Action="http://Estructuras/WSChofer/editarchoferResponse" message="tns:editarchoferResponse" />
+</operation>
+<operation name="apuntarnodochofer">
+<input wsam:Action="http://Estructuras/WSChofer/apuntarnodochoferRequest" message="tns:apuntarnodochofer" />
+<output wsam:Action="http://Estructuras/WSChofer/apuntarnodochoferResponse" message="tns:apuntarnodochoferResponse" />
+</operation>
+<operation name="agregardianodochofer">
+<input wsam:Action="http://Estructuras/WSChofer/agregardianodochoferRequest" message="tns:agregardianodochofer" />
+<output wsam:Action="http://Estructuras/WSChofer/agregardianodochoferResponse" message="tns:agregardianodochoferResponse" />
+</operation>
+<operation name="agregarbusadiachofer">
+<input wsam:Action="http://Estructuras/WSChofer/agregarbusadiachoferRequest" message="tns:agregarbusadiachofer" />
+<output wsam:Action="http://Estructuras/WSChofer/agregarbusadiachoferResponse" message="tns:agregarbusadiachoferResponse" />
+</operation>
+<operation name="agregarhoraAbusydiachofer">
+<input wsam:Action="http://Estructuras/WSChofer/agregarhoraAbusydiachoferRequest" message="tns:agregarhoraAbusydiachofer" />
+<output wsam:Action="http://Estructuras/WSChofer/agregarhoraAbusydiachoferResponse" message="tns:agregarhoraAbusydiachoferResponse" />
+</operation>
 </portType>
 <binding name="WSChoferPortBinding" type="tns:WSChofer">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
-<operation name="editarchofer">
-<soap:operation soapAction="" />
-<input>
-<soap:body use="literal" />
-</input>
-<output>
-<soap:body use="literal" />
-</output>
-</operation>
 <operation name="imprimirchofer">
-<soap:operation soapAction="" />
-<input>
-<soap:body use="literal" />
-</input>
-<output>
-<soap:body use="literal" />
-</output>
-</operation>
-<operation name="limpiarchofer">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -94,7 +116,61 @@
 <soap:body use="literal" />
 </output>
 </operation>
+<operation name="limpiarchofer">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
 <operation name="buscarchofer">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="editarchofer">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="apuntarnodochofer">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="agregardianodochofer">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="agregarbusadiachofer">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="agregarhoraAbusydiachofer">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Bean;
 
 import javax.ejb.Stateless;
@@ -18,6 +14,7 @@ public class BeanAdmin {
  private String idesclave;
  private String nombreesclave;
  private String contraesclave;
+ private String idbus;
  
  public String getCorreoAdmin(){
      return correoadmin;
@@ -48,6 +45,12 @@ public class BeanAdmin {
  }
  public void setContraEsClave(String contra){
      this.contraesclave=contra;
+ }
+ public String getIdBus(){
+     return idbus;
+ }
+ public void setIdBus(String id){
+     this.idbus=id;
  }
  
 }

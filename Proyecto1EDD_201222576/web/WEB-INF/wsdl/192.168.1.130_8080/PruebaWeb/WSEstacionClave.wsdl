@@ -10,17 +10,11 @@
 <message name="ingresaresclaveResponse">
 <part name="parameters" element="tns:ingresaresclaveResponse" />
 </message>
-<message name="imprimiresclave">
-<part name="parameters" element="tns:imprimiresclave" />
+<message name="limpiaresclave">
+<part name="parameters" element="tns:limpiaresclave" />
 </message>
-<message name="imprimiresclaveResponse">
-<part name="parameters" element="tns:imprimiresclaveResponse" />
-</message>
-<message name="editaresclave">
-<part name="parameters" element="tns:editaresclave" />
-</message>
-<message name="editaresclaveResponse">
-<part name="parameters" element="tns:editaresclaveResponse" />
+<message name="limpiaresclaveResponse">
+<part name="parameters" element="tns:limpiaresclaveResponse" />
 </message>
 <message name="buscaresclave">
 <part name="parameters" element="tns:buscaresclave" />
@@ -28,32 +22,38 @@
 <message name="buscaresclaveResponse">
 <part name="parameters" element="tns:buscaresclaveResponse" />
 </message>
-<message name="limpiaresclave">
-<part name="parameters" element="tns:limpiaresclave" />
+<message name="editaresclave">
+<part name="parameters" element="tns:editaresclave" />
 </message>
-<message name="limpiaresclaveResponse">
-<part name="parameters" element="tns:limpiaresclaveResponse" />
+<message name="editaresclaveResponse">
+<part name="parameters" element="tns:editaresclaveResponse" />
+</message>
+<message name="imprimiresclave">
+<part name="parameters" element="tns:imprimiresclave" />
+</message>
+<message name="imprimiresclaveResponse">
+<part name="parameters" element="tns:imprimiresclaveResponse" />
 </message>
 <portType name="WSEstacionClave">
 <operation name="ingresaresclave">
 <input wsam:Action="http://Estructuras/WSEstacionClave/ingresaresclaveRequest" message="tns:ingresaresclave" />
 <output wsam:Action="http://Estructuras/WSEstacionClave/ingresaresclaveResponse" message="tns:ingresaresclaveResponse" />
 </operation>
-<operation name="imprimiresclave">
-<input wsam:Action="http://Estructuras/WSEstacionClave/imprimiresclaveRequest" message="tns:imprimiresclave" />
-<output wsam:Action="http://Estructuras/WSEstacionClave/imprimiresclaveResponse" message="tns:imprimiresclaveResponse" />
-</operation>
-<operation name="editaresclave">
-<input wsam:Action="http://Estructuras/WSEstacionClave/editaresclaveRequest" message="tns:editaresclave" />
-<output wsam:Action="http://Estructuras/WSEstacionClave/editaresclaveResponse" message="tns:editaresclaveResponse" />
+<operation name="limpiaresclave">
+<input wsam:Action="http://Estructuras/WSEstacionClave/limpiaresclaveRequest" message="tns:limpiaresclave" />
+<output wsam:Action="http://Estructuras/WSEstacionClave/limpiaresclaveResponse" message="tns:limpiaresclaveResponse" />
 </operation>
 <operation name="buscaresclave">
 <input wsam:Action="http://Estructuras/WSEstacionClave/buscaresclaveRequest" message="tns:buscaresclave" />
 <output wsam:Action="http://Estructuras/WSEstacionClave/buscaresclaveResponse" message="tns:buscaresclaveResponse" />
 </operation>
-<operation name="limpiaresclave">
-<input wsam:Action="http://Estructuras/WSEstacionClave/limpiaresclaveRequest" message="tns:limpiaresclave" />
-<output wsam:Action="http://Estructuras/WSEstacionClave/limpiaresclaveResponse" message="tns:limpiaresclaveResponse" />
+<operation name="editaresclave">
+<input wsam:Action="http://Estructuras/WSEstacionClave/editaresclaveRequest" message="tns:editaresclave" />
+<output wsam:Action="http://Estructuras/WSEstacionClave/editaresclaveResponse" message="tns:editaresclaveResponse" />
+</operation>
+<operation name="imprimiresclave">
+<input wsam:Action="http://Estructuras/WSEstacionClave/imprimiresclaveRequest" message="tns:imprimiresclave" />
+<output wsam:Action="http://Estructuras/WSEstacionClave/imprimiresclaveResponse" message="tns:imprimiresclaveResponse" />
 </operation>
 </portType>
 <binding name="WSEstacionClavePortBinding" type="tns:WSEstacionClave">
@@ -67,16 +67,7 @@
 <soap:body use="literal" />
 </output>
 </operation>
-<operation name="imprimiresclave">
-<soap:operation soapAction="" />
-<input>
-<soap:body use="literal" />
-</input>
-<output>
-<soap:body use="literal" />
-</output>
-</operation>
-<operation name="editaresclave">
+<operation name="limpiaresclave">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -94,7 +85,16 @@
 <soap:body use="literal" />
 </output>
 </operation>
-<operation name="limpiaresclave">
+<operation name="editaresclave">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="imprimiresclave">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />

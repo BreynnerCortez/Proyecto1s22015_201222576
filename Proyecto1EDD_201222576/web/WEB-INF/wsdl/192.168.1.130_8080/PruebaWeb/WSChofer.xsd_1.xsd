@@ -1,5 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://Estructuras/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Estructuras/">
 
+<xs:element name="agregarbusadiachofer" type="tns:agregarbusadiachofer" />
+
+<xs:element name="agregarbusadiachoferResponse" type="tns:agregarbusadiachoferResponse" />
+
+<xs:element name="agregardianodochofer" type="tns:agregardianodochofer" />
+
+<xs:element name="agregardianodochoferResponse" type="tns:agregardianodochoferResponse" />
+
+<xs:element name="agregarhoraAbusydiachofer" type="tns:agregarhoraAbusydiachofer" />
+
+<xs:element name="agregarhoraAbusydiachoferResponse" type="tns:agregarhoraAbusydiachoferResponse" />
+
+<xs:element name="apuntarnodochofer" type="tns:apuntarnodochofer" />
+
+<xs:element name="apuntarnodochoferResponse" type="tns:apuntarnodochoferResponse" />
+
 <xs:element name="buscarchofer" type="tns:buscarchofer" />
 
 <xs:element name="buscarchoferResponse" type="tns:buscarchoferResponse" />
@@ -20,6 +36,21 @@
 
 <xs:element name="limpiarchoferResponse" type="tns:limpiarchoferResponse" />
 
+<xs:complexType name="agregarhoraAbusydiachofer">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
+<xs:element name="arg1" type="xs:string" minOccurs="0" />
+<xs:element name="arg2" type="xs:string" minOccurs="0" />
+<xs:element name="arg3" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarhoraAbusydiachoferResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="editarchofer">
 <xs:sequence>
 <xs:element name="arg0" type="xs:string" minOccurs="0" />
@@ -33,6 +64,19 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="agregardianodochofer">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
+<xs:element name="arg1" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregardianodochoferResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="ingresarchofer">
 <xs:sequence>
 <xs:element name="arg0" type="xs:string" minOccurs="0" />
@@ -42,6 +86,31 @@
 <xs:complexType name="ingresarchoferResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="apuntarnodochofer">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="apuntarnodochoferResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarbusadiachofer">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
+<xs:element name="arg1" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarbusadiachoferResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
 

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://Estructuras/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Estructuras/">
+
+<xs:element name="buscarbus" type="tns:buscarbus" />
+
+<xs:element name="buscarbusResponse" type="tns:buscarbusResponse" />
+
+<xs:element name="imprimirbus" type="tns:imprimirbus" />
+
+<xs:element name="imprimirbusResponse" type="tns:imprimirbusResponse" />
+
+<xs:element name="ingresarbus" type="tns:ingresarbus" />
+
+<xs:element name="ingresarbusResponse" type="tns:ingresarbusResponse" />
+
+<xs:element name="limpiarbus" type="tns:limpiarbus" />
+
+<xs:element name="limpiarbusResponse" type="tns:limpiarbusResponse" />
+
+<xs:complexType name="buscarbus">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarbusResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ingresarbus">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ingresarbusResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="imprimirbus">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="imprimirbusResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="limpiarbus">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="limpiarbusResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

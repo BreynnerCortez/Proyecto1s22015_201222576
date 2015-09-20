@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://Estructuras/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Estructuras/">
+
+<xs:element name="buscarruta" type="tns:buscarruta" />
+
+<xs:element name="buscarrutaResponse" type="tns:buscarrutaResponse" />
+
+<xs:element name="imprimirruta" type="tns:imprimirruta" />
+
+<xs:element name="imprimirrutaResponse" type="tns:imprimirrutaResponse" />
+
+<xs:element name="ingresarruta" type="tns:ingresarruta" />
+
+<xs:element name="ingresarrutaResponse" type="tns:ingresarrutaResponse" />
+
+<xs:element name="limpiarruta" type="tns:limpiarruta" />
+
+<xs:element name="limpiarrutaResponse" type="tns:limpiarrutaResponse" />
+
+<xs:complexType name="ingresarruta">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ingresarrutaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarruta">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarrutaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="imprimirruta">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="imprimirrutaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="limpiarruta">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="limpiarrutaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

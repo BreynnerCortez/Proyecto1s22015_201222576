@@ -90,5 +90,37 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/estructuras"/>
         <delete dir="${build.generated.dir}/jax-wsCache/WSChofer"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-WSAdmin, wsimport-client-WSEstacionClave, wsimport-client-WSEstacionGeneral, wsimport-client-WSChofer"/>
+    <target name="wsimport-client-WSBuses" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSBuses"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSBuses" destdir="${build.generated.dir}/jax-wsCache/WSBuses" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSBuses/wsdl/192.168.1.130_8080/PruebaWeb/WSBuses.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://192.168.1.130:8080/PruebaWeb/WSBuses?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSBuses/wsdl/192.168.1.130_8080/PruebaWeb/WSBuses.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSBuses"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSBuses">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSBuses" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/estructuras"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSBuses"/>
+    </target>
+    <target name="wsimport-client-WSRuta" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSRuta"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSRuta" destdir="${build.generated.dir}/jax-wsCache/WSRuta" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSRuta/wsdl/192.168.1.130_8080/PruebaWeb/WSRuta.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://192.168.1.130:8080/PruebaWeb/WSRuta?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSRuta/wsdl/192.168.1.130_8080/PruebaWeb/WSRuta.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSRuta"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSRuta">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSRuta" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/estructuras"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSRuta"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-WSAdmin, wsimport-client-WSEstacionClave, wsimport-client-WSEstacionGeneral, wsimport-client-WSChofer, wsimport-client-WSBuses, wsimport-client-WSRuta"/>
 </project>

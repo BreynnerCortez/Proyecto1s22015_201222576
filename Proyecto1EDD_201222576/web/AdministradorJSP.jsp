@@ -22,9 +22,9 @@
         <form  method="POST" action="ServletVerAdmins">
             <input type="submit" value="Ver Administradores" name="VerAdmins" />
         </form><br>
-<pre><a href="CrearAdminJSP.jsp">Crear Administrador</a>     <a href="CrearEstacionClaveJSP.jsp">Crear Estacion Clave</a></pre>
+<h2><pre><a href="CrearAdminJSP.jsp">Crear Administrador</a>     <a href="CrearEstacionClaveJSP.jsp">Crear Estacion Clave</a>     <a href="CrearBusJSP.jsp">Crear Bus</a></pre></h2>
         <br>
-        <a href="ServeletVerEsClave">Ver Estaciones Clave</a>
+        <h2><pre><a href="ServeletVerEsClave">Ver Estaciones Clave</a>     <a href="ServeletVerBuses">Ver Buses</a></pre></h2>
         <br>
         <a href="LoginAdminsJSP.jsp">Regresar</a>
         

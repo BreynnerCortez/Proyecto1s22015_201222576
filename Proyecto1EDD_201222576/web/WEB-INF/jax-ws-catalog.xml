@@ -12,4 +12,8 @@
     <system systemId="http://192.168.1.130:8080/PruebaWeb/WSEstacionGeneral?xsd=1" uri="wsdl/192.168.1.130_8080/PruebaWeb/WSEstacionGeneral.xsd_1.xsd"/>
     <system systemId="http://192.168.1.130:8080/PruebaWeb/WSChofer?wsdl" uri="wsdl/192.168.1.130_8080/PruebaWeb/WSChofer.wsdl"/>
     <system systemId="http://192.168.1.130:8080/PruebaWeb/WSChofer?xsd=1" uri="wsdl/192.168.1.130_8080/PruebaWeb/WSChofer.xsd_1.xsd"/>
+    <system systemId="http://192.168.1.130:8080/PruebaWeb/WSRuta?wsdl" uri="wsdl/192.168.1.130_8080/PruebaWeb/WSRuta.wsdl"/>
+    <system systemId="http://192.168.1.130:8080/PruebaWeb/WSRuta?xsd=1" uri="wsdl/192.168.1.130_8080/PruebaWeb/WSRuta.xsd_1.xsd"/>
+    <system systemId="http://192.168.1.130:8080/PruebaWeb/WSBuses?wsdl" uri="wsdl/192.168.1.130_8080/PruebaWeb/WSBuses.wsdl"/>
+    <system systemId="http://192.168.1.130:8080/PruebaWeb/WSBuses?xsd=1" uri="wsdl/192.168.1.130_8080/PruebaWeb/WSBuses.xsd_1.xsd"/>
 </catalog>

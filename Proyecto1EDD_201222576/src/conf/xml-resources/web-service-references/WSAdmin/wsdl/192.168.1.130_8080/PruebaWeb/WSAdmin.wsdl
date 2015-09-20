@@ -4,24 +4,6 @@
 <xsd:import namespace="http://Estructuras/" schemaLocation="http://192.168.1.130:8080/PruebaWeb/WSAdmin?xsd=1" />
 </xsd:schema>
 </types>
-<message name="buscar">
-<part name="parameters" element="tns:buscar" />
-</message>
-<message name="buscarResponse">
-<part name="parameters" element="tns:buscarResponse" />
-</message>
-<message name="imprimir">
-<part name="parameters" element="tns:imprimir" />
-</message>
-<message name="imprimirResponse">
-<part name="parameters" element="tns:imprimirResponse" />
-</message>
-<message name="limpiar">
-<part name="parameters" element="tns:limpiar" />
-</message>
-<message name="limpiarResponse">
-<part name="parameters" element="tns:limpiarResponse" />
-</message>
 <message name="ingresar">
 <part name="parameters" element="tns:ingresar" />
 </message>
@@ -34,19 +16,25 @@
 <message name="editarResponse">
 <part name="parameters" element="tns:editarResponse" />
 </message>
+<message name="limpiar">
+<part name="parameters" element="tns:limpiar" />
+</message>
+<message name="limpiarResponse">
+<part name="parameters" element="tns:limpiarResponse" />
+</message>
+<message name="buscar">
+<part name="parameters" element="tns:buscar" />
+</message>
+<message name="buscarResponse">
+<part name="parameters" element="tns:buscarResponse" />
+</message>
+<message name="imprimir">
+<part name="parameters" element="tns:imprimir" />
+</message>
+<message name="imprimirResponse">
+<part name="parameters" element="tns:imprimirResponse" />
+</message>
 <portType name="WSAdmin">
-<operation name="buscar">
-<input wsam:Action="http://Estructuras/WSAdmin/buscarRequest" message="tns:buscar" />
-<output wsam:Action="http://Estructuras/WSAdmin/buscarResponse" message="tns:buscarResponse" />
-</operation>
-<operation name="imprimir">
-<input wsam:Action="http://Estructuras/WSAdmin/imprimirRequest" message="tns:imprimir" />
-<output wsam:Action="http://Estructuras/WSAdmin/imprimirResponse" message="tns:imprimirResponse" />
-</operation>
-<operation name="limpiar">
-<input wsam:Action="http://Estructuras/WSAdmin/limpiarRequest" message="tns:limpiar" />
-<output wsam:Action="http://Estructuras/WSAdmin/limpiarResponse" message="tns:limpiarResponse" />
-</operation>
 <operation name="ingresar">
 <input wsam:Action="http://Estructuras/WSAdmin/ingresarRequest" message="tns:ingresar" />
 <output wsam:Action="http://Estructuras/WSAdmin/ingresarResponse" message="tns:ingresarResponse" />
@@ -55,10 +43,22 @@
 <input wsam:Action="http://Estructuras/WSAdmin/editarRequest" message="tns:editar" />
 <output wsam:Action="http://Estructuras/WSAdmin/editarResponse" message="tns:editarResponse" />
 </operation>
+<operation name="limpiar">
+<input wsam:Action="http://Estructuras/WSAdmin/limpiarRequest" message="tns:limpiar" />
+<output wsam:Action="http://Estructuras/WSAdmin/limpiarResponse" message="tns:limpiarResponse" />
+</operation>
+<operation name="buscar">
+<input wsam:Action="http://Estructuras/WSAdmin/buscarRequest" message="tns:buscar" />
+<output wsam:Action="http://Estructuras/WSAdmin/buscarResponse" message="tns:buscarResponse" />
+</operation>
+<operation name="imprimir">
+<input wsam:Action="http://Estructuras/WSAdmin/imprimirRequest" message="tns:imprimir" />
+<output wsam:Action="http://Estructuras/WSAdmin/imprimirResponse" message="tns:imprimirResponse" />
+</operation>
 </portType>
 <binding name="WSAdminPortBinding" type="tns:WSAdmin">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
-<operation name="buscar">
+<operation name="ingresar">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -67,7 +67,7 @@
 <soap:body use="literal" />
 </output>
 </operation>
-<operation name="imprimir">
+<operation name="editar">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -85,7 +85,7 @@
 <soap:body use="literal" />
 </output>
 </operation>
-<operation name="ingresar">
+<operation name="buscar">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -94,7 +94,7 @@
 <soap:body use="literal" />
 </output>
 </operation>
-<operation name="editar">
+<operation name="imprimir">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
