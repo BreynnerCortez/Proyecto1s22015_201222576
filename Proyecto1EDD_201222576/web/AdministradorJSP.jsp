@@ -22,9 +22,12 @@
         <form  method="POST" action="ServletVerAdmins">
             <input type="submit" value="Ver Administradores" name="VerAdmins" />
         </form><br>
-        <input type="file" name="archivo" value="" width="200" /> <br>
-        <a href="ServletCargarCSV">Cargar archivo CSV</a>
-        <br>
+        <form action="ServletCargarCSV" method="post">
+        Ingrese PATH de archivo CSV:
+        <input type="text" name="archivo" value="" size="50" />
+        <input type="submit" value="Cargar CSV" />
+        </form>
+         <br>
         <h2><pre><a href="CrearAdminJSP.jsp">Crear Administrador</a>     <a href="CrearEstacionClaveJSP.jsp">Crear Estacion Clave</a>     <a href="CrearChoferJSP.jsp">Crear Chofer</a>     <a href="CrearEstacionGeneralJSP.jsp">Crear Estacion General</a>     <a href="CrearBusJSP.jsp">Crear Bus</a>     <a href="CrearRutaJSP.jsp">Crear Ruta</a></pre></h2>
         <br>
         <h2><pre><a href="ServeletVerEsClave">Ver Estaciones Clave</a>     <a href="ServeletVerEsGeneral">Ver Estaciones Generales</a>     <a href="ServeletVerChofer">Ver Choferes</a>     <a href="ServeletVerBuses">Ver Buses</a>     <a href="ServeletVerRutas">Ver Rutas</a></pre></h2>

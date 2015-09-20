@@ -74,22 +74,6 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/estructuras"/>
         <delete dir="${build.generated.dir}/jax-wsCache/WSEstacionGeneral"/>
     </target>
-    <target name="wsimport-client-WSChofer" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/WSChofer"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSChofer" destdir="${build.generated.dir}/jax-wsCache/WSChofer" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSChofer/wsdl/192.168.1.130_8080/PruebaWeb/WSChofer.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://192.168.1.130:8080/PruebaWeb/WSChofer?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSChofer/wsdl/192.168.1.130_8080/PruebaWeb/WSChofer.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/WSChofer"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/WSChofer">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-WSChofer" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/estructuras"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/WSChofer"/>
-    </target>
     <target name="wsimport-client-WSBuses" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/WSBuses"/>
         <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSBuses" destdir="${build.generated.dir}/jax-wsCache/WSBuses" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSBuses/wsdl/192.168.1.130_8080/PruebaWeb/WSBuses.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://192.168.1.130:8080/PruebaWeb/WSBuses?wsdl" xnocompile="true" xendorsed="true">
@@ -122,5 +106,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/estructuras"/>
         <delete dir="${build.generated.dir}/jax-wsCache/WSRuta"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-WSAdmin, wsimport-client-WSEstacionClave, wsimport-client-WSEstacionGeneral, wsimport-client-WSChofer, wsimport-client-WSBuses, wsimport-client-WSRuta"/>
+    <target name="wsimport-client-WSChofer" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSChofer"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSChofer" destdir="${build.generated.dir}/jax-wsCache/WSChofer" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSChofer/wsdl/192.168.1.130_8080/PruebaWeb/WSChofer.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://192.168.1.130:8080/PruebaWeb/WSChofer?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSChofer/wsdl/192.168.1.130_8080/PruebaWeb/WSChofer.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSChofer"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSChofer">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSChofer" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/estructuras"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSChofer"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-WSAdmin, wsimport-client-WSEstacionClave, wsimport-client-WSEstacionGeneral, wsimport-client-WSBuses, wsimport-client-WSRuta, wsimport-client-WSChofer"/>
 </project>
