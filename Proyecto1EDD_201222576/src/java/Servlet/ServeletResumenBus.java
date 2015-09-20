@@ -46,6 +46,7 @@ public class ServeletResumenBus extends HttpServlet {
             limpiaresumenbus(choferes[i]);
             String d=resumenbus(choferes[i], idbusresu);
             String []a=d.split(",");
+            if(a.length>1){
             for(int j=0;j<a.length;j++){
                 int b=j+1;
                 if(b<=a.length&&b%2!=0){
@@ -53,6 +54,8 @@ public class ServeletResumenBus extends HttpServlet {
                 }
                 
             }
+            }
+            
         }
         
         
