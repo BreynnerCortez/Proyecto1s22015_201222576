@@ -59,16 +59,17 @@ public class ServletCargarCSV extends HttpServlet {
             if(buscarchofer(datos[2]+",arg")==null){
                 ingresarchofer(datos[2]+",chofer,Chofer,ApeChofer");
             }
-           if(apuntarnodochofer(buscarchofer(datos[2]+",arg"))){
+                String h=buscarchofer(datos[2]+",arg");
                if(agregardianodochofer(buscarchofer(datos[2]+",arg"), datos[5])){
-                   if(agregarbusadiachofer(datos[2]+",arg", datos[5], datos[0])){
-                       agregarhoraAbusydiachofer(datos[2]+",arg", datos[5], datos[0], datos[3]);
-                       agregarhoraAbusydiachofer(datos[2]+",arg", datos[5], datos[0], datos[4]);
+                   if(agregarbusadiachofer(buscarchofer(datos[2]+",arg"), datos[5], datos[0])){
+                       Boolean a=agregarhoraAbusydiachofer(buscarchofer(datos[2]+",arg"), datos[5], datos[0], datos[3]);
+                       Boolean e=agregarhoraAbusydiachofer(buscarchofer(datos[2]+",arg"), datos[5], datos[0], datos[4]);
                    }
                }
-           }
+           
         }
         b.close();
+         request.getRequestDispatcher("AdministradorJSP.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -150,13 +151,6 @@ public class ServletCargarCSV extends HttpServlet {
         // If the calling of port operations may lead to race condition some synchronization is required.
         estructuras.WSChofer port = service_2.getWSChoferPort();
         return port.ingresarchofer(arg0);
-    }
-
-    private Boolean apuntarnodochofer(java.lang.String arg0) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        estructuras.WSChofer port = service_2.getWSChoferPort();
-        return port.apuntarnodochofer(arg0);
     }
 
     private Boolean agregardianodochofer(java.lang.String arg0, java.lang.String arg1) {
