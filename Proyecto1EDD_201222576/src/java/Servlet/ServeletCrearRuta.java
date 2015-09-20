@@ -5,6 +5,8 @@
  */
 package Servlet;
 
+import estructuras.WSEstacionClaveService;
+import estructuras.WSEstacionGeneralService;
 import estructuras.WSRutaService;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -21,6 +23,10 @@ import javax.xml.ws.WebServiceRef;
  */
 @WebServlet(name = "ServeletCrearRuta", urlPatterns = {"/ServeletCrearRuta"})
 public class ServeletCrearRuta extends HttpServlet {
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/192.168.1.130_8080/PruebaWeb/WSEstacionGeneral.wsdl")
+    private WSEstacionGeneralService service_2;
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/192.168.1.130_8080/PruebaWeb/WSEstacionClave.wsdl")
+    private WSEstacionClaveService service_1;
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/192.168.1.130_8080/PruebaWeb/WSRuta.wsdl")
     private WSRutaService service;
 
@@ -36,11 +42,44 @@ public class ServeletCrearRuta extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-     String datosadm=request.getParameter("nombre");
+         String estaci=request.getParameter("estaciones");
+         String estacinue="";
+         String[]sep=estaci.split(",");
+         for(int i=0;i<sep.length;i++){
+             if(buscaresclave(sep[i])!=null || buscaresgeneral(sep[i])!=null){
+             if(i==sep.length-1){
+                 estacinue=estacinue+sep[i];
+             }else{
+             estacinue=estacinue+sep[i]+";";
+             }
+             }else{
+                try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Bienvenido a MuniGT!</title>");  
+            out.println("<style type=\"text/css\">\n" +
+"        body{\n" +
+"    background-image:url('https://upload.wikimedia.org/wikipedia/commons/d/d2/Bandera_Municipalidad_de_Guatemala.jpg');\n" +
+"        }\n" +
+"         </style>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h2>La estacion: \""+sep[i]+"\" no existe intente con nuevas estaciones!</h2>");
+            out.println(" <a href=\"CrearRutaJSP.jsp\">Regresar</a>");
+            out.println("</body>");
+            out.println("</html>");
+        }       
+             }
+         }
+         
+     String datosadm=request.getParameter("nombre")+","+estacinue;
+    
         String d= imprimirruta();
         String a=buscarruta(datosadm);
         if(buscarruta(datosadm)!=null){
-            String id=buscarruta(datosadm);
+            String id=buscarruta(datosadm).split(",")[0];
               if(id.compareTo(request.getParameter("nombre"))==0){
             try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -55,8 +94,8 @@ public class ServeletCrearRuta extends HttpServlet {
 "         </style>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h2>Bus existente, intente con un nuevo ID!</h2>");
-            out.println(" <a href=\"CrearBusJSP.jsp\">Regresar</a>");
+            out.println("<h2>Ruta existente, intente con un nuevo nombre!</h2>");
+            out.println(" <a href=\"CrearRutaJSP.jsp\">Regresar</a>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -133,6 +172,20 @@ public class ServeletCrearRuta extends HttpServlet {
         // If the calling of port operations may lead to race condition some synchronization is required.
         estructuras.WSRuta port = service.getWSRutaPort();
         return port.limpiarruta();
+    }
+
+    private String buscaresclave(java.lang.String arg0) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        estructuras.WSEstacionClave port = service_1.getWSEstacionClavePort();
+        return port.buscaresclave(arg0);
+    }
+
+    private String buscaresgeneral(java.lang.String arg0) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        estructuras.WSEstacionGeneral port = service_2.getWSEstacionGeneralPort();
+        return port.buscaresgeneral(arg0);
     }
 
     

@@ -17,11 +17,15 @@
          </style>
     </head>
     <body>
-        <h1>Bienvenido a Creacion de Bus.</h1>
+        <h1>Bienvenido a Creacion de Ruta.</h1>
         <form action="ServeletCrearRuta" method="POST">
+            <h3><pre><a href="ServeletVerEsClave">Estaciones Clave Disponibles</a>      <a href="ServeletVerEsGeneral">Estaciones Generales Disponibles</a></pre></h3>
+            <br>
             <div style="text-align: left;">
                    Ingrese Nombre de la Ruta:
                    <input type="text" name="nombre"  value="" /> <br> <br>
+                   Estaciones por las que pasa(ejemplo: A,C,D):
+                   <input type="text" name="estaciones"  value="" /> <br> <br>
                     <input type="submit" value="Registrar" name="Registro"  />
             </div><br>
             <a href="AdministradorJSP.jsp">Regresar</a>
