@@ -20,14 +20,15 @@
         <div style="text-align: center;" >
         <h1>Bienvenido Administrador!</h1></div>
          <form  method="post" action="ServletVerificarAdmin" >
-             <div style="text-align: right;">
+            <h3><div style="text-align: right;">
                     Usuario:
             <input type="text" name="correo"  value="" />
                     Contraseña:
             <input type="Password" name="contrase"   value="" />
             <input type="submit" value="Ingresar" name="Ingreso"  />
-             </div>
+             </div></h3>
             <hr>
+            <a href="Inicio.jsp">Regresar a Pagina Principal</a>
             <div style="text-align: right;">
                 <img src="admin.jpg" width="630" height="349" alt="admin"/>
             </div>

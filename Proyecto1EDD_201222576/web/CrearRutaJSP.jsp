@@ -1,6 +1,6 @@
 <%-- 
-    Document   : CrearEstacionClaveJSP
-    Created on : 18/09/2015, 06:33:16 PM
+    Document   : CrearRutaJSP
+    Created on : 19/09/2015, 08:18:41 PM
     Author     : Breynner
 --%>
 
@@ -17,16 +17,12 @@
          </style>
     </head>
     <body>
-        <h1>Bienvenido a Creacion de Estaciones Clave.</h1>
-        <form action="ServeletCrearEsClave" method="POST">
+        <h1>Bienvenido a Creacion de Bus.</h1>
+        <form action="ServeletCrearRuta" method="POST">
             <div style="text-align: left;">
-                    ID numerico:
-            <input type="number" name="id"  value="" /> <br> <br>
-                    Nombre:
-            <input type="text" name="nombre"   value="" /> <br><br>
-                    Contraseña:
-            <input type="text" name="contrase"   value="" /> <br><br>
-            <input type="submit" value="Registrar" name="Registro"  />
+                   Ingrese Nombre de la Ruta:
+                   <input type="text" name="nombre"  value="" /> <br> <br>
+                    <input type="submit" value="Registrar" name="Registro"  />
             </div><br>
             <a href="AdministradorJSP.jsp">Regresar</a>
         </form>

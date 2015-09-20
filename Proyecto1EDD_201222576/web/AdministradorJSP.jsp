@@ -18,13 +18,13 @@
     </head>
     <body>
         <jsp:useBean id="datos" scope="request" class="Bean.BeanAdmin" />
-        <h1>Bienvenido: <jsp:getProperty name="datos" property="correoAdmin" />! </h1>
+        <h1>Bienvenido Administrador: <jsp:getProperty name="datos" property="correoAdmin" />! </h1>
         <form  method="POST" action="ServletVerAdmins">
             <input type="submit" value="Ver Administradores" name="VerAdmins" />
         </form><br>
-<h2><pre><a href="CrearAdminJSP.jsp">Crear Administrador</a>     <a href="CrearEstacionClaveJSP.jsp">Crear Estacion Clave</a>     <a href="CrearBusJSP.jsp">Crear Bus</a></pre></h2>
+<h2><pre><a href="CrearAdminJSP.jsp">Crear Administrador</a>     <a href="CrearEstacionClaveJSP.jsp">Crear Estacion Clave</a>     <a href="CrearChoferJSP.jsp">Crear Chofer</a>     <a href="CrearEstacionGeneralJSP.jsp">Crear Estacion General</a>     <a href="CrearBusJSP.jsp">Crear Bus</a>     <a href="CrearRutaJSP.jsp">Crear Ruta</a></pre></h2>
         <br>
-        <h2><pre><a href="ServeletVerEsClave">Ver Estaciones Clave</a>     <a href="ServeletVerBuses">Ver Buses</a></pre></h2>
+        <h2><pre><a href="ServeletVerEsClave">Ver Estaciones Clave</a>     <a href="ServeletVerEsGeneral">Ver Estaciones Generales</a>     <a href="ServeletVerChofer">Ver Choferes</a>     <a href="ServeletVerBuses">Ver Buses</a>     <a href="ServeletVerRutas">Ver Rutas</a></pre></h2>
         <br>
         <a href="LoginAdminsJSP.jsp">Regresar</a>
         

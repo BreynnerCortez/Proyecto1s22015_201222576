@@ -1,14 +1,11 @@
-package Servlet;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package Servlet;
 
-import Bean.BeanAdmin;
-import estructuras.WSEstacionClave;
-import estructuras.WSEstacionClaveService;
+import estructuras.WSRutaService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -22,23 +19,29 @@ import javax.xml.ws.WebServiceRef;
  *
  * @author Breynner
  */
-@WebServlet(urlPatterns = {"/ServeletCrearEsClave"})
-public class ServeletCrearEsClave extends HttpServlet {
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/192.168.1.130_8080/PruebaWeb/WSEstacionClave.wsdl")
-    private WSEstacionClaveService service;
-   
+@WebServlet(name = "ServeletCrearRuta", urlPatterns = {"/ServeletCrearRuta"})
+public class ServeletCrearRuta extends HttpServlet {
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/192.168.1.130_8080/PruebaWeb/WSRuta.wsdl")
+    private WSRutaService service;
 
-
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        String datosadm=request.getParameter("id")+","+request.getParameter("contrase")+","+request.getParameter("nombre");
-        String d= imprimiresclave();
-        String a=buscaresclave(datosadm);
-        if(buscaresclave(datosadm)!=null){
-            String id=buscaresclave(datosadm).split(",")[0];
-              if(id.compareTo(request.getParameter("id"))==0){
+     String datosadm=request.getParameter("nombre");
+        String d= imprimirruta();
+        String a=buscarruta(datosadm);
+        if(buscarruta(datosadm)!=null){
+            String id=buscarruta(datosadm);
+              if(id.compareTo(request.getParameter("nombre"))==0){
             try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -52,24 +55,17 @@ public class ServeletCrearEsClave extends HttpServlet {
 "         </style>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h2>Usuario existente, intente con nuevos registros!</h2>");
-            out.println(" <a href=\"CrearEstacionClaveJSP.jsp\">Regresar</a>");
+            out.println("<h2>Bus existente, intente con un nuevo ID!</h2>");
+            out.println(" <a href=\"CrearBusJSP.jsp\">Regresar</a>");
             out.println("</body>");
             out.println("</html>");
         }
               }
         }
         else{
-            ingresaresclave(datosadm+",0");
-             request.getRequestDispatcher("CrearEstacionClaveJSP.jsp").forward(request, response);
+            ingresarruta(datosadm);
+             request.getRequestDispatcher("CrearRutaJSP.jsp").forward(request, response);
         }
-        
-        
-        
-        
-        
-        
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -111,27 +107,33 @@ public class ServeletCrearEsClave extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private String buscaresclave(java.lang.String arg0) {
+    private String buscarruta(java.lang.String arg0) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        estructuras.WSEstacionClave port = service.getWSEstacionClavePort();
-        return port.buscaresclave(arg0);
+        estructuras.WSRuta port = service.getWSRutaPort();
+        return port.buscarruta(arg0);
     }
 
-    private String imprimiresclave() {
+    private String imprimirruta() {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        estructuras.WSEstacionClave port = service.getWSEstacionClavePort();
-        return port.imprimiresclave();
+        estructuras.WSRuta port = service.getWSRutaPort();
+        return port.imprimirruta();
     }
 
-    private boolean ingresaresclave(java.lang.String arg0) {
+    private boolean ingresarruta(java.lang.String arg0) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        estructuras.WSEstacionClave port = service.getWSEstacionClavePort();
-        return port.ingresaresclave(arg0);
+        estructuras.WSRuta port = service.getWSRutaPort();
+        return port.ingresarruta(arg0);
     }
 
-   
+    private boolean limpiarruta() {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        estructuras.WSRuta port = service.getWSRutaPort();
+        return port.limpiarruta();
+    }
 
+    
 }

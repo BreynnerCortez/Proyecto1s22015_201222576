@@ -1,6 +1,6 @@
 <%-- 
-    Document   : CrearEstacionClaveJSP
-    Created on : 18/09/2015, 06:33:16 PM
+    Document   : CrearChofer
+    Created on : 19/09/2015, 09:02:23 PM
     Author     : Breynner
 --%>
 
@@ -17,20 +17,22 @@
          </style>
     </head>
     <body>
-        <h1>Bienvenido a Creacion de Estaciones Clave.</h1>
-        <form action="ServeletCrearEsClave" method="POST">
+        <h1>Bienvenido a Creacion de Choferes.</h1>
+        <form action="ServeletCrearChofer" method="POST">
             <div style="text-align: left;">
-                    ID numerico:
-            <input type="number" name="id"  value="" /> <br> <br>
+                    Clave:
+            <input type="number" name="clave"  value="" /> <br> <br>
+                    Contraseña:
+            <input type="text" name="contra"   value="" /> <br><br>
                     Nombre:
             <input type="text" name="nombre"   value="" /> <br><br>
-                    Contraseña:
-            <input type="text" name="contrase"   value="" /> <br><br>
+                    Apellido:
+            <input type="text" name="apellido"   value="" /> <br><br>
             <input type="submit" value="Registrar" name="Registro"  />
             </div><br>
             <a href="AdministradorJSP.jsp">Regresar</a>
         </form>
         <div style="text-align: right;">
-            <img src="estaciones.jpg" width="630" height="1430" alt="estaciones"/></div>
+            <img src="chofer.jpg" width="630" height="1430" alt="estaciones"/></div>
     </body>
 </html>

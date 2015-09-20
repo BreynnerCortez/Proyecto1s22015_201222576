@@ -14,6 +14,9 @@ public class BeanAdmin {
  private String idesclave;
  private String nombreesclave;
  private String contraesclave;
+  private String idesgeneral;
+ private String nombreesgeneral;
+ private String contraesgeneral;
  private String idbus;
  
  public String getCorreoAdmin(){
@@ -45,6 +48,24 @@ public class BeanAdmin {
  }
  public void setContraEsClave(String contra){
      this.contraesclave=contra;
+ }
+ public String getIdEsGeneral(){
+     return idesgeneral;
+ }
+ public void setIdEsGeneral(String id){
+     this.idesgeneral=id;
+ }
+  public String getNombreEsGeneral(){
+     return nombreesgeneral;
+ }
+ public void setNombreEsGeneral(String nombre){
+     this.nombreesgeneral=nombre;
+ }
+  public String getContraEsGeneral(){
+     return contraesgeneral;
+ }
+ public void setContraEsGeneral(String contra){
+     this.contraesgeneral=contra;
  }
  public String getIdBus(){
      return idbus;
